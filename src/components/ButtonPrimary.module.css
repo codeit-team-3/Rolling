@@ -1,0 +1,39 @@
+.btn-primary {
+  border: none;
+  background-color: #9747ff;
+  color: #ffffff;
+  text-align: center;
+
+  &:active:not(:disabled) {
+    background-color: #9747ff;
+  }
+
+  &:disabled {
+    background-color: #cccccc;
+  }
+
+  &:hover:not(:disabled) {
+    background-color: #861dee;
+  }
+
+  &:active:not(:disabled),
+  &:focus:not(:disabled) {
+    background-color: #6e0ad1;
+  }
+}
+
+.btn-56 {
+  width: 208px;
+  height: 56px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.btn-40 {
+  width: 122px;
+  height: 40px;
+  border-radius: 6px;
+  font-weight: 400;
+  font-size: 16px;
+}
