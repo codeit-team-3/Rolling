@@ -3,29 +3,29 @@
   height: 40px;
   border-radius: 6px;
   border: 1px solid #9747ff;
-  background-color: #ffffff;
+  background-color: var(--white);
   color: #9747ff;
   font-weight: 400;
   font-size: 16px;
   text-align: center;
 
   &:disabled {
-    border: 1px solid #cccccc;
-    background-color: #cccccc;
-    color: #ffffff;
+    border: 1px solid var(--gray-300);
+    background-color: var(--gray-300);
+    color: var(--white);
   }
 
   &:hover:not(:disabled) {
-    border: 1px solid #861dee;
+    border: 1px solid var(--purple-700);
     background-color: #f8f0ff;
   }
 
   &:active:not(:disabled) {
-    border: 1px solid #6e0ad1;
+    border: 1px solid var(--purple-800);
     background-color: #f8f0ff;
   }
 
   &:focus:not(:disabled) {
-    border: 1px solid #6e0ad1;
+    border: 1px solid var(--purple-800);
   }
 }

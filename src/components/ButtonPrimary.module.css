@@ -1,7 +1,7 @@
 .btn-primary {
   border: none;
   background-color: #9747ff;
-  color: #ffffff;
+  color: var(--white);
   text-align: center;
 
   &:active:not(:disabled) {
@@ -9,16 +9,16 @@
   }
 
   &:disabled {
-    background-color: #cccccc;
+    background-color: var(--gray-300);
   }
 
   &:hover:not(:disabled) {
-    background-color: #861dee;
+    background-color: var(--purple-700);
   }
 
   &:active:not(:disabled),
   &:focus:not(:disabled) {
-    background-color: #6e0ad1;
+    background-color: var(--purple-800);
   }
 }
 

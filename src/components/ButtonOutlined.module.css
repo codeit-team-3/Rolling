@@ -1,25 +1,25 @@
 .btn-outlined {
   border-radius: 6px;
-  border: 1px solid #cccccc;
-  background-color: #ffffff;
-  color: #181818;
+  border: 1px solid var(--gray-300);
+  background-color: var(--white);
+  color: var(--gray-900);
   font-weight: 700;
   font-size: 18px;
   text-align: center;
 
   &:disabled {
-    border: 1px solid #cccccc;
-    background-color: #cccccc;
-    color: #ffffff;
+    border: 1px solid var(--gray-300);
+    background-color: var(--gray-300);
+    color: var(--white);
   }
 
   &:active:not(:disabled),
   &:hover:not(:disabled) {
-    background-color: #f6f6f6;
+    background-color: var(--gray-100);
   }
 
   &:focus:not(:disabled) {
-    border: 1px solid #555555;
+    border: 1px solid var(--gray-500);
   }
 }
 
