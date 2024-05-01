@@ -1,0 +1,28 @@
+:root {
+  --font-size28: 28px;
+  --font-size24: 24px;
+  --font-size20: 20px;
+  --font-size18: 18px;
+  --font-size16: 16px;
+  --font-size15: 15px;
+  --font-size14: 14px;
+  --font-size12: 12px;
+  --font-family-Regular: "Pretendard-Regular";
+  --font-family-Bold: "Pretendard-Bold";
+}
+
+body {
+  font-family: "Pretendard";
+}
+
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("./Pretendard-Regular.woff");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Pretendard-Bold";
+  src: url("./Pretendard-Bold.woff");
+  font-weight: bold;
+}
