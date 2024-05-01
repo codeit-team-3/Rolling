@@ -1,0 +1,13 @@
+.badgeEmoji {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 55px;
+  min-height: 28px;
+  padding: 4px 8px;
+  border-radius: 32px;
+  background-color: rgba(0, 0, 0, 0.54);
+  font-weight: 400;
+  font-size: var(--font-size14);
+  color: #ffffff;
+}
