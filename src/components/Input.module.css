@@ -21,4 +21,23 @@
 
 .input:focus {
   border: 2px solid #555555;
+  color: #181818;
+}
+
+.errorInput {
+  border: 1px solid #dc3a3a;
+  width: 320px;
+  padding: 12px 16px 12px 16px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: pretendard;
+}
+
+.errorInput::placeholder {
+  color: #181818;
+}
+
+.errorMessage {
+  color: #dc3a3a;
+  margin-top: 0;
 }
