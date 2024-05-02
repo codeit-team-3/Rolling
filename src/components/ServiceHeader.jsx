@@ -4,7 +4,7 @@ import BadgeEmoji from "./BadgeEmoji"
 import ContributorsInfo from "./ContributorsInfo"
 import useWindowSize from "../hooks/useWindowSize"
 import arrowDown from "../assets/ic-arrow_down.svg"
-import styles from "./RollingPaperHeader.module.css"
+import styles from "./ServiceHeader.module.css"
 
 const RollingPaperHeader = ({ recipient }) => {
   const [screenSize, setScreenSize] = useState("medium")
@@ -56,7 +56,7 @@ const RollingPaperHeader = ({ recipient }) => {
               <BadgeEmoji emoji={"🤩"} count="2" />
               <BadgeEmoji emoji={"😀"} count="23" />
               <BadgeEmoji emoji={"🥰"} count="10" />
-               <BadgeEmoji emoji={"🥰"} count="10" />
+              <BadgeEmoji emoji={"🥰"} count="10" />
               <BadgeEmoji emoji={"🤩"} count="2" />
               <BadgeEmoji emoji={"😀"} count="23" />
             </div>

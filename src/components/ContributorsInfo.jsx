@@ -1,11 +1,11 @@
-import React from "react";
-import ProfileImage from "./ProfileImage";
-import styles from "./ContributorsInfo.module.css";
+import React from "react"
+import ProfileImage from "./ProfileImage"
+import styles from "./ContributorsInfo.module.css"
 
 const ContributorsInfo = ({ recentMessages, messageCount }) => {
-  const totalContributors = recentMessages.length;
+  const totalContributors = recentMessages.length
   const showContributors =
-    totalContributors > 3 ? recentMessages.slice(3) : recentMessages;
+    totalContributors > 3 ? recentMessages.slice(3) : recentMessages
 
   return (
     <>
@@ -20,7 +20,7 @@ const ContributorsInfo = ({ recentMessages, messageCount }) => {
         <p>명이 작성했어요!</p>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default ContributorsInfo;
+export default ContributorsInfo
