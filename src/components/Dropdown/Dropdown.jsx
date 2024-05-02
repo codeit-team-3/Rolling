@@ -1,25 +1,50 @@
-import styles from "./Dropdown.module.css"
 import { useState } from "react"
+import styles from "./Dropdown.module.css"
 
-const Dropdown = () => {
-  const [select, setSelect] = useState("")
+const Dropdown = ({ onSelect }) => {
+  const [isOpen, setIsOpen] = useState(false)
+  const [selectedOption, setSelectedOption] = useState("")
 
-  const IconSVG = styles.svg
+  const options = [
+    "TextTextText",
+    "TextTextText",
+    "TextTextText",
+    "TextTextText",
+  ]
 
-  const onClick = (e) => {
-    setSelect(e.target.value)
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen)
+  }
+
+  const handleSelectOption = (value) => {
+    setSelectedOption(value)
+    onSelect(value)
+    setIsOpen(false)
   }
 
   return (
-    <select onClick={onClick} className={styles.select} name="dropdown">
-      <option disabled hidden selected>
-        Placeholder
-      </option>
-      <option>TextTextText</option>
-      <option>TextTextText</option>
-      <option>TextTextText</option>
-      <option>TextTextText</option>
-    </select>
+    <section className={styles.theme}>
+      <div className={styles.select} onClick={toggleDropdown}>
+        <button className={styles.placeholder} name="dropdown">
+          {selectedOption || "Placeholder"}{" "}
+        </button>
+        {isOpen && (
+          <ul className={styles.optionList}>
+            {options.map((option, index) => (
+              <li
+                key={index}
+                className={styles.option}
+                onClick={() => handleSelectOption(option)}
+              >
+                <button className={styles.eachOption} type="button">
+                  {option}
+                </button>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+    </section>
   )
 }
 
