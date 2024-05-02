@@ -1,0 +1,32 @@
+i {
+  display: block;
+  width: 24px;
+  height: 24px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+i.ic-add {
+  background-image: url("../assets/ic-add.svg");
+}
+
+i.ic-add-white {
+  background-image: url("../assets/ic-add-white.svg");
+}
+
+i.ic-delete {
+  background-image: url("../assets/ic-delete.svg");
+}
+
+i.ic-delete-white {
+  background-image: url("../assets/ic-delete-white.svg");
+}
+
+i.ic-plus {
+  background-image: url("../assets/ic-plus.svg");
+}
+
+i.ic-share {
+  background-image: url("../assets/ic-share.svg");
+}
