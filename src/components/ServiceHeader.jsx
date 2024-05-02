@@ -17,7 +17,6 @@ const RollingPaperHeader = ({ recipient }) => {
   }, [width])
 
   const { name, recentMessages, messageCount, topReactions } = recipient
-  console.log(recipient)
 
   const clickMoreEmojis = () => {
     setMoreEmoji((preState) => !preState)
