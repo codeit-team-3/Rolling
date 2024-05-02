@@ -1,0 +1,31 @@
+.btn-secondary-40 {
+  width: 122px;
+  height: 40px;
+  border-radius: 6px;
+  border: 1px solid #9747ff;
+  background-color: var(--white);
+  color: #9747ff;
+  font-weight: 400;
+  font-size: 16px;
+  text-align: center;
+
+  &:disabled {
+    border: 1px solid var(--gray-300);
+    background-color: var(--gray-300);
+    color: var(--white);
+  }
+
+  &:hover:not(:disabled) {
+    border: 1px solid var(--purple-700);
+    background-color: #f8f0ff;
+  }
+
+  &:active:not(:disabled) {
+    border: 1px solid var(--purple-800);
+    background-color: #f8f0ff;
+  }
+
+  &:focus:not(:disabled) {
+    border: 1px solid var(--purple-800);
+  }
+}
