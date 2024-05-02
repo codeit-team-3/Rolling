@@ -30,3 +30,23 @@ i.ic-plus {
 i.ic-share {
   background-image: url("../assets/ic-share.svg");
 }
+
+i.ic-arrow_down {
+  background-image: url("../assets/ic-arrow_down.svg");
+}
+
+i.ic-arrow_left {
+  background-image: url("../assets/ic-arrow_left.svg");
+}
+
+i.ic-arrow_right {
+  background-image: url("../assets/ic-arrow_right.svg");
+}
+
+i.ic-check {
+  background-image: url("../assets/ic-check.svg");
+}
+
+i.ic-edit {
+  background-image: url("../assets/ic-edit.svg");
+}
