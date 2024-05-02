@@ -4,7 +4,7 @@
   list-style-type: none;
 }
 
-li {
+.BadgeContainer li {
   display: flex;
   align-items: center;
   width: 25px;
