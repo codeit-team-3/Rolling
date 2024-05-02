@@ -1,5 +1,5 @@
 import React from "react"
-import "./Toast.css"
+import styles from "./Toast.module.css"
 
 const Toast = ({ message, onClose }) => {
   const handleClose = () => {
