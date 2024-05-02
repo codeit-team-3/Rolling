@@ -1,5 +1,10 @@
+import Dropdown from "./components/Dropdown/Dropdown.jsx"
 function App() {
-  return <></>
+  return (
+    <>
+      <Dropdown />
+    </>
+  )
 }
 
 export default App
