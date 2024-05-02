@@ -1,34 +1,39 @@
+import React, { useState } from "react"
 import styles from "./Input.module.css"
-import { useState } from "react"
 
-const Input = () => {
+const Input = ({ placeholder, onChange, onBlurProp, onFocusProp }) => {
   const [text, setText] = useState("")
   const [isTouched, setIsTouched] = useState(false)
   const [isFocused, setIsFocused] = useState(false)
 
-  const onChange = (e) => {
+  const handleChange = (e) => {
     setText(e.target.value)
+    if (onChange) onChange(e)
   }
 
-  const onBlur = () => {
+  const handleBlur = (e) => {
     setIsTouched(true)
     setIsFocused(false)
+    if (onBlurProp) onBlurProp(e)
   }
 
-  const onFocus = () => {
+  const handleFocus = (e) => {
     setIsFocused(true)
+    if (onFocusProp) onFocusProp(e)
   }
 
   const hasError = isTouched && !isFocused && text.trim() === ""
+
   return (
     <div>
       <input
         className={hasError ? styles.errorInput : styles.input}
         value={text}
-        onChange={onChange}
-        onBlur={onBlur}
-        onFocus={onFocus}
-        placeholder="Placeholder"
+        name="input"
+        onChange={handleChange}
+        onBlur={handleBlur}
+        onFocus={handleFocus}
+        placeholder={placeholder}
       />
       {hasError && <p className={styles.errorMessage}>Error Message</p>}
     </div>
