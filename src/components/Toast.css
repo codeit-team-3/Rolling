@@ -17,10 +17,5 @@
 
 .toast-content {
   margin-right: auto;
-  font-size: var(--font-szie-16);
-}
-
-.toast-icon {
-  width: 24px;
-  height: 24px;
+  font-size: var(--font-szie16);
 }

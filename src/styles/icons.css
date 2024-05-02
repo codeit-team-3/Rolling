@@ -30,3 +30,12 @@ i.ic-plus {
 i.ic-share {
   background-image: url("../assets/ic-share.svg");
 }
+
+i.ic-close {
+  background-image: url("../assets/ic-close.png");
+  cursor: pointer;
+}
+
+i.ic-completed {
+  background-image: url("../assets/ic-completed.png");
+}
