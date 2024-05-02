@@ -1,7 +1,13 @@
 import React, { useState } from "react"
 import styles from "./Input.module.css"
 
-const Input = ({ placeholder, onChange, onBlurProp, onFocusProp }) => {
+const Input = ({
+  placeholder,
+  onChange,
+  onBlurProp,
+  onFocusProp,
+  errorMessage,
+}) => {
   const [text, setText] = useState("")
   const [isTouched, setIsTouched] = useState(false)
   const [isFocused, setIsFocused] = useState(false)
@@ -35,7 +41,7 @@ const Input = ({ placeholder, onChange, onBlurProp, onFocusProp }) => {
         onFocus={handleFocus}
         placeholder={placeholder}
       />
-      {hasError && <p className={styles.errorMessage}>Error Message</p>}
+      {hasError && <p className={styles.errorMessage}>{errorMessage || ""}</p>}
     </div>
   )
 }
