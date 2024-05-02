@@ -1,0 +1,26 @@
+.toast {
+  display: flex;
+  position: fixed;
+  bottom: 70px;
+  left: 50%;
+  width: 524px;
+  height: 26px;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: var(--white);
+  padding: 19px 30px;
+  border-radius: 8px;
+  z-index: 1;
+  align-items: center;
+  gap: 12px;
+}
+
+.toast-content {
+  margin-right: auto;
+  font-size: var(--font-szie-16);
+}
+
+.toast-icon {
+  width: 24px;
+  height: 24px;
+}
