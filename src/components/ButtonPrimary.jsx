@@ -1,5 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
+import clsx from "clsx"
 import styles from "./ButtonPrimary.module.css"
 
 const ButtonPrimary = ({
@@ -11,7 +12,7 @@ const ButtonPrimary = ({
 }) => {
   return (
     <button
-      className={`${styles[`btn-primary`]} ${size && styles[`btn-${size}`]}`}
+      className={clsx(styles.primaryButton, { [styles[`btn${size}`]]: size })}
       type={type}
       onClick={onClick}
       disabled={disabled}
