@@ -2,7 +2,7 @@ import { useState } from "react"
 import styles from "./Option.module.css"
 
 const Option = ({ optionType, onSelectOption }) => {
-  const backGoundImageUrls = [
+  const backGroundImageUrls = [
     "https://picsum.photos/id/683/3840/2160",
     "https://picsum.photos/id/24/3840/2160",
     "https://picsum.photos/id/599/3840/2160",
@@ -15,11 +15,11 @@ const Option = ({ optionType, onSelectOption }) => {
 
   const handleOptionClick = (option) => {
     setSelectedOption(option)
-    if (optionType==="color") {
+    if (optionType === "color") {
       onSelectOption(option)
     } else {
       const index = parseInt(option.slice(-1)) - 1
-      onSelectOption(backGoundImageUrls[index])
+      onSelectOption(backGroundImageUrls[index])
     }
   }
 
@@ -67,9 +67,8 @@ const Option = ({ optionType, onSelectOption }) => {
           )}
         </button>
       </div>
-    );
-  }
-  else {
+    )
+  } else {
     return (
       <div className={styles["option-container"]}>
         <button
@@ -113,8 +112,8 @@ const Option = ({ optionType, onSelectOption }) => {
           )}
         </button>
       </div>
-    );
+    )
   }
 }
 
-export default Option;
+export default Option

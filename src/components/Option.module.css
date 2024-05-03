@@ -57,6 +57,7 @@
   padding: 10px;
   border-radius: 100%;
   background-color: var(--gray-500);
+  z-index: 1;
 }
 
 .option-button.selected::after {
@@ -69,4 +70,3 @@
   border-radius: 16px;
   background-color: rgba(255, 255, 255, 0.2);
 }
-
