@@ -1,16 +1,13 @@
 import { useState } from "react"
 import styles from "./Dropdown.module.css"
 
-const Dropdown = ({ onSelect }) => {
+const Dropdown = ({
+  options = ["TextTextText", "TextTextText", "TextTextText", "TextTextText"],
+  placeholder = "Placeholder",
+  onSelect,
+}) => {
   const [isOpen, setIsOpen] = useState(false)
   const [selectedOption, setSelectedOption] = useState("")
-
-  const options = [
-    "TextTextText",
-    "TextTextText",
-    "TextTextText",
-    "TextTextText",
-  ]
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen)
@@ -26,7 +23,7 @@ const Dropdown = ({ onSelect }) => {
     <section className={styles.theme}>
       <div className={styles.select} onClick={toggleDropdown}>
         <button className={styles.placeholder} name="dropdown">
-          {selectedOption || "Placeholder"}{" "}
+          {selectedOption || placeholder}
         </button>
         {isOpen && (
           <ul className={styles.optionList}>
