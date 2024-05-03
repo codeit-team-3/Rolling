@@ -4,7 +4,7 @@
   bottom: 70px;
   left: 50%;
   width: 524px;
-  height: 26px;
+  height: 64px;
   transform: translateX(-50%);
   background-color: rgba(0, 0, 0, 0.8);
   color: var(--white);
