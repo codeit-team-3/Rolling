@@ -41,12 +41,6 @@
   flex-direction: column;
   justify-content: center;
 }
-
-.profile-image {
-  width: 56px;
-  height: 56px;
-  border-radius: 100px;
-}
 .sender {
   font-size: var(--font-size20);
   font-family: var(--font-family-Regular);

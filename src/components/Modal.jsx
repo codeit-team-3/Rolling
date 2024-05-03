@@ -2,8 +2,17 @@ import { useState } from 'react';
 import Badge from './Badge';
 import ButtonPrimary from './ButtonPrimary';
 import styles from './Modal.module.css';
+import ProfileImage from './ProfileImage';
 
-function Modal({ messageData }) {
+function formatDateString(dateString) {
+  const date = new Date(dateString)
+  const year = date.getFullYear()
+  const month = String(date.getMonth() + 1).padStart(2, "0")
+  const day = String(date.getDate()).padStart(2, "0")
+  return `${year}.${month}.${day}`
+}
+
+const Modal = ({ messageData }) => {
   if (!messageData) {
     return (
       <div className={`${styles.modal} ${styles.loading}`}>Loading...</div>
@@ -17,14 +26,6 @@ function Modal({ messageData }) {
   }
 
   const { profileImageURL, sender, relationship, createdAt, content, font } = messageData;
-
-  function formatDateString(dateString) {
-    const date = new Date(dateString)
-    const year = date.getFullYear()
-    const month = String(date.getMonth() + 1).padStart(2, "0")
-    const day = String(date.getDate()).padStart(2, "0")
-    return `${year}.${month}.${day}`
-  }
   const formattedcreatedAt = formatDateString(createdAt);
   
   const handleClose = () => setIsVisible(false);
@@ -33,11 +34,7 @@ function Modal({ messageData }) {
     <div className={styles.modal}>
       <div className={styles['message-info-container']}>
         <div className={styles['sender-info-container1']}>
-          <img
-            src={profileImageURL}
-            alt={`Profile image of ${sender}`}
-            className={styles['profile-image']}
-          />
+          <ProfileImage id={sender} src={profileImageURL} />
           <div className={styles['sender-info-container2']}>
             <span className={styles.sender}>
               From. <span>{sender}</span>
