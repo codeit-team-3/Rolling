@@ -3,8 +3,16 @@ import ButtonOutlined from "./ButtonOutlined"
 import BadgeEmoji from "./BadgeEmoji"
 import ContributorsInfo from "./ContributorsInfo"
 import useWindowSize from "../hooks/useWindowSize"
-import arrowDown from "../assets/ic-arrow_down.svg"
 import styles from "./ServiceHeader.module.css"
+
+const onCopyAddress = async () => {
+  const currentURL = window.location.href
+  try {
+    await navigator.clipboard.writeText(currentURL)
+  } catch (e) {
+    alert("복사에 실패하였습니다")
+  }
+}
 
 const RollingPaperHeader = ({ recipient }) => {
   const [screenSize, setScreenSize] = useState("medium")
@@ -16,7 +24,8 @@ const RollingPaperHeader = ({ recipient }) => {
     width >= 768 ? setScreenSize("medium") : setScreenSize("small")
   }, [width])
 
-  const { name, recentMessages, messageCount, topReactions } = recipient
+  const { name, recentMessages, messageCount, reactionCount, topReactions } =
+    recipient
 
   const clickMoreEmojis = () => {
     setMoreEmoji((preState) => !preState)
@@ -40,26 +49,16 @@ const RollingPaperHeader = ({ recipient }) => {
               <div className={styles.line} />
             </div>
           )}
-          <div className={styles.emojiPopover}>
-            {topReactions.map(({ emoji, count }) => (
-              <BadgeEmoji key={emoji} emoji={emoji} count={count} />
-            ))}
-            <button onClick={clickMoreEmojis}>
-              <img src={arrowDown} alt="이모지 반응 더 보기" />
-            </button>
-          </div>
-          {/* {moreEmoji && (
-            <div className={styles.emojiBox}>
-              <BadgeEmoji emoji={"😀"} count="23" />
-              <BadgeEmoji emoji={"🥰"} count="10" />
-              <BadgeEmoji emoji={"🤩"} count="2" />
-              <BadgeEmoji emoji={"😀"} count="23" />
-              <BadgeEmoji emoji={"🥰"} count="10" />
-              <BadgeEmoji emoji={"🥰"} count="10" />
-              <BadgeEmoji emoji={"🤩"} count="2" />
-              <BadgeEmoji emoji={"😀"} count="23" />
+          {reactionCount > 0 && (
+            <div className={styles.emojiPopover}>
+              {topReactions.map(({ emoji, count }) => (
+                <BadgeEmoji key={emoji} emoji={emoji} count={count} />
+              ))}
+              <button onClick={clickMoreEmojis}>
+                <i className="ic-arrow_down"></i>
+              </button>
             </div>
-          )} */}
+          )}
           <div className={styles.buttons}>
             <ButtonOutlined size="36" icon="add">
               {screenSize === "medium" ? "추가" : null}
@@ -68,8 +67,8 @@ const RollingPaperHeader = ({ recipient }) => {
             <ButtonOutlined icon="share" onClick={clickDropdown} />
             {showDropdown && (
               <div className={styles.dropdownList}>
-                <div>카카오톡 공유</div>
-                <div>URL 공유</div>
+                <button>카카오톡 공유</button>
+                <button onClick={onCopyAddress}>URL 공유</button>
               </div>
             )}
           </div>

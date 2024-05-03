@@ -1,4 +1,6 @@
 .profileImgBox {
+  display: flex;
+  align-items: center;
   width: auto;
   height: auto;
 
@@ -19,7 +21,7 @@
     transform: translateX(-28px);
   }
 
-  > div:nth-of-type(4) {
+  .otherContributor {
     transform: translateX(-42px);
     display: flex;
     justify-content: center;
@@ -33,7 +35,7 @@
 }
 
 .contributors {
-  display: inline-block;
+  display: flex;
   font-weight: 400;
   font-size: 18px;
   flex-shrink: 0;
