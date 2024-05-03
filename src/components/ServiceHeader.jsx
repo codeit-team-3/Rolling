@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import ButtonOutlined from "./ButtonOutlined"
+import Button from "./Button"
 import BadgeEmoji from "./BadgeEmoji"
 import ContributorsInfo from "./ContributorsInfo"
 import useWindowSize from "../hooks/useWindowSize"
@@ -61,11 +61,11 @@ const RollingPaperHeader = ({ recipient }) => {
             </div>
           )} */}
           <div className={styles.buttons}>
-            <ButtonOutlined size="36" icon="add">
+            <Button.Outlined size="36" icon="add">
               {screenSize === "medium" ? "추가" : null}
-            </ButtonOutlined>
+            </Button.Outlined>
             <div className={styles.line} />
-            <ButtonOutlined icon="share" onClick={clickDropdown} />
+            <Button.Outlined icon="share" onClick={clickDropdown} />
             {showDropdown && (
               <div className={styles.dropdownList}>
                 <div>카카오톡 공유</div>
