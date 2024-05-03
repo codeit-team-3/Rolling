@@ -14,7 +14,7 @@ const onCopyAddress = async () => {
   }
 }
 
-const RollingPaperHeader = ({ recipient }) => {
+const ServiceHeader = ({ recipient }) => {
   const [screenSize, setScreenSize] = useState("medium")
   const [moreEmoji, setMoreEmoji] = useState(false)
   const [showDropdown, setShowDropdown] = useState(false)
@@ -78,4 +78,4 @@ const RollingPaperHeader = ({ recipient }) => {
   )
 }
 
-export default RollingPaperHeader
+export default ServiceHeader
