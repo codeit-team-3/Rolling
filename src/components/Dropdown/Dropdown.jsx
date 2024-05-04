@@ -2,7 +2,7 @@ import { useState } from "react"
 import styles from "./Dropdown.module.css"
 
 const Dropdown = ({
-  options = ["TextTextText", "TextTextText", "TextTextText", "TextTextText"],
+  options = [],
   placeholder = "Placeholder",
   onSelect,
 }) => {
