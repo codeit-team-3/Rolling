@@ -1,5 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
+import clsx from "clsx"
 import styles from "./ButtonOutlined.module.css"
 
 const ButtonOutlined = ({
@@ -12,7 +13,10 @@ const ButtonOutlined = ({
 }) => {
   return (
     <button
-      className={`${styles[`btn-outlined`]} ${size && styles[`btn-${size}`]} ${icon && styles["btn-icon"]}`}
+      className={clsx(styles.outlinedButton, {
+        [styles[`btn${size}`]]: size,
+        [styles.iconButton]: icon,
+      })}
       type={type}
       onClick={onClick}
       disabled={disabled}

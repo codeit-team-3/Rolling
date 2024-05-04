@@ -1,4 +1,4 @@
-.btn-primary {
+.primaryButton {
   border: none;
   background-color: #9747ff;
   color: var(--white);
@@ -22,7 +22,7 @@
   }
 }
 
-.btn-56 {
+.btn56 {
   width: 208px;
   height: 56px;
   border-radius: 12px;
@@ -30,7 +30,7 @@
   font-size: 18px;
 }
 
-.btn-40 {
+.btn40 {
   width: 122px;
   height: 40px;
   border-radius: 6px;
