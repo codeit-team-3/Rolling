@@ -1,5 +1,5 @@
 import React from "react"
-import PropTypes from "prop-types"
+import { Link } from "react-router-dom"
 import clsx from "clsx"
 import styles from "./ButtonOutlined.module.css"
 
@@ -8,11 +8,15 @@ const ButtonOutlined = ({
   type = "button",
   onClick,
   disabled = false,
-  size = "",
+  size = 40,
   icon = "",
+  link = null,
 }) => {
+  const ButtonComponent = link ? Link : "button"
+
   return (
-    <button
+    <ButtonComponent
+      to={link}
       className={clsx(styles.outlinedButton, {
         [styles[`btn${size}`]]: size,
         [styles.iconButton]: icon,
@@ -24,17 +28,8 @@ const ButtonOutlined = ({
       {icon && !disabled && <i className={`ic-${icon}`}></i>}
       {icon && disabled && <i className={`ic-${icon}-white`}></i>}
       {children}
-    </button>
+    </ButtonComponent>
   )
-}
-
-ButtonOutlined.propTypes = {
-  children: PropTypes.string,
-  type: PropTypes.oneOf(["button", "submit"]),
-  onClick: PropTypes.func,
-  disabled: PropTypes.bool,
-  size: PropTypes.string,
-  icon: PropTypes.string,
 }
 
 export default ButtonOutlined
