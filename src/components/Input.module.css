@@ -38,6 +38,7 @@
 }
 
 .errorMessage {
+  margin-top: 6px;
+  font-size: 14px;
   color: #dc3a3a;
-  margin-top: 0;
 }

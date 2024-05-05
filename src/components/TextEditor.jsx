@@ -3,8 +3,12 @@ import ReactQuill from "react-quill"
 import "react-quill/dist/quill.snow.css" // Quill의 스타일을 import합니다.
 import styles from "./TextEditor.module.css"
 
-const Editor = () => {
+const Editor = ({ onBlur }) => {
   const [value, setValue] = useState("")
+
+  const handleBlurEditor = () => {
+    onBlur && onBlur(value)
+  }
 
   const modules = {
     toolbar: [
@@ -25,6 +29,7 @@ const Editor = () => {
         theme="snow"
         value={value}
         onChange={setValue}
+        onBlur={handleBlurEditor}
       />
     </div>
   )
