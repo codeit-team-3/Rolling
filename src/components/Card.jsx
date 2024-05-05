@@ -1,15 +1,8 @@
 import Badge from "./Badge"
-import styles from "./Card.module.css"
 import ProfileImage from "./ProfileImage"
 import ButtonOutlined from "./ButtonOutlined"
-
-function formatDateString(dateString) {
-  const date = new Date(dateString)
-  const year = date.getFullYear()
-  const month = String(date.getMonth() + 1).padStart(2, "0")
-  const day = String(date.getDate()).padStart(2, "0")
-  return `${year}.${month}.${day}`
-}
+import { formatDateString } from "../services/utils"
+import styles from "./Card.module.css"
 
 const Card = ({ messageData, isEditable, onDeleteButton, onClickCard }) => {
   if (!messageData) {
