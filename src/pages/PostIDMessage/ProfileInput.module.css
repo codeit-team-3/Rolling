@@ -8,6 +8,7 @@
 }
 
 .profileLabel {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,6 +29,20 @@
     height: 100%;
     border-radius: 100%;
     object-fit: cover;
+  }
+
+  > button {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 24px;
+    height: 24px;
+    border: 2px solid var(--white);
+
+    > i {
+      width: 10px;
+      height: 10px;
+    }
   }
 }
 

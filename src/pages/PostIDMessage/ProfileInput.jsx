@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import ProfileImage from "../../components/ProfileImage"
+import ButtonCircleAdd from "../../components/ButtonCircleAdd"
 import styles from "./ProfileInput.module.css"
 import profileImage01 from "../../assets/img-profile01.jpeg"
 import profileImage02 from "../../assets/img-profile02.jpeg"
@@ -53,6 +54,7 @@ const ProfileInput = ({ onChange }) => {
         ) : (
           <i className="ic-person"></i>
         )}
+        <ButtonCircleAdd />
       </label>
       <input
         type="file"
