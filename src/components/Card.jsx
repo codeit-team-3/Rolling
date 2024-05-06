@@ -1,7 +1,7 @@
 import Badge from "./Badge"
 import ProfileImage from "./ProfileImage"
 import ButtonOutlined from "./ButtonOutlined"
-import { formatDateString } from "../services/utils"
+import { formatDateString } from "../utils/formatDateString"
 import styles from "./Card.module.css"
 
 const Card = ({ messageData, isEditable, onDeleteButton, onClickCard }) => {
