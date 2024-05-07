@@ -1,5 +1,5 @@
 import React from "react"
-import PropTypes from "prop-types"
+import { Link } from "react-router-dom"
 import styles from "./ButtonSecondary.module.css"
 
 const ButtonSecondary = ({
@@ -7,24 +7,21 @@ const ButtonSecondary = ({
   type = "button",
   onClick,
   disabled = false,
+  link = null,
 }) => {
+  const ButtonComponent = link ? Link : "button"
+
   return (
-    <button
+    <ButtonComponent
+      to={link}
       className={styles[`btn-secondary-40`]}
       type={type}
       onClick={onClick}
       disabled={disabled}
     >
       {children}
-    </button>
+    </ButtonComponent>
   )
-}
-
-ButtonSecondary.propTypes = {
-  children: PropTypes.node.isRequired,
-  type: PropTypes.oneOf(["button", "submit"]),
-  onClick: PropTypes.func,
-  disabled: PropTypes.bool,
 }
 
 export default ButtonSecondary
