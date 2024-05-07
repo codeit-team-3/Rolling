@@ -36,10 +36,16 @@ export async function deleteRecipient(recipientId) {
   }
 }
 
-export async function getRecipientReaction(recipientId) {
+export async function getRecipientReaction(recipientId, limit, offset) {
   try {
     const response = await axiosInstance.get(
       `/recipients/${recipientId}/reactions/`,
+      {
+        params: {
+          limit: limit,
+          offset: offset,
+        },
+      },
     )
     return response.data
   } catch (error) {
