@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import Button from "../Button"
 import ContributorsInfo from "../ContributorsInfo"
-import EmojiSection from "./EmojiSection"
+import ReactionSection from "./ReactionSection"
 import Toast from "../Toast"
 import useWindowSize from "../../hooks/useWindowSize"
 import styles from "./ServiceHeader.module.css"
@@ -25,7 +25,7 @@ const ServiceHeader = ({ recipient }) => {
     width >= 768 ? setScreenSize("medium") : setScreenSize("small")
   }, [width])
 
-  const { id, name, recentMessages, messageCount } = recipient
+  const { id, name, recentMessages, messageCount, topReactions } = recipient
 
   const handleClickDropdown = () => {
     setShowDropdown((preState) => !preState)
@@ -55,13 +55,21 @@ const ServiceHeader = ({ recipient }) => {
           )}
 
           <div className={styles.emojiSection}>
-            <EmojiSection id={id} screenSize={screenSize} />
+            <ReactionSection
+              id={id}
+              screenSize={screenSize}
+              topReactions={topReactions}
+            />
           </div>
 
           <div className={styles.line} />
 
           <div className={styles.shareSection}>
-            <Button.Outlined icon="share" onClick={handleClickDropdown} />
+            <Button.Outlined
+              icon="share"
+              size="36"
+              onClick={handleClickDropdown}
+            />
             {showDropdown && (
               <div className={styles.dropdownList}>
                 <button>카카오톡 공유</button>
