@@ -1,29 +1,17 @@
-import React, { useEffect, useState } from "react"
+import { useCallback } from "react"
+import fetcher from "../apis/axiosInstance"
 
-const useRequest = (apiFunction) => {
-  const [data, setData] = useState(null)
-  const [error, setError] = useState(null)
-  const [loading, setLoading] = useState(false)
-
-  useEffect(() => {
-    const fetchData = async () => {
-      setLoading(true)
-      try {
-        const responseData = await apiFunction()
-        setData(responseData)
-        setError(null)
-      } catch (error) {
-        setError(error)
-        setData(null)
-      } finally {
-        setLoading(false)
-      }
+const useRequest = () => {
+  const request = useCallback(async (config) => {
+    try {
+      const responseData = await fetcher(config)
+      return { data: responseData.data }
+    } catch (error) {
+      return { error: error }
     }
-
-    fetchData()
   }, [])
 
-  return { data, error, loading }
+  return request
 }
 
 export default useRequest
