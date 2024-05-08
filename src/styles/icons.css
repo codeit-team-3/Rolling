@@ -58,3 +58,7 @@ i.ic-check {
 i.ic-edit {
   background-image: url("../assets/ic-edit.svg");
 }
+
+i.ic-person {
+  background-image: url("../assets/ic-person.svg");
+}

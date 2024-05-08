@@ -5,7 +5,7 @@ import List from "./pages/List"
 import Post from "./pages/Post"
 import PostId from "./pages/PostId"
 import PostIdEdit from "./pages/PostIdEdit"
-import PostIDMessage from "./pages/PostIDMessage"
+import PostIDMessage from "./pages/PostIDMessage/PostIDMessage"
 import NotFoundPage from "./pages/NotFoundPage"
 
 function AppRoutes() {
@@ -14,11 +14,10 @@ function AppRoutes() {
       <Route path="/" element={<AppLayout />}>
         <Route index element={<HomePage />} />
         <Route path="list" element={<List />} />
-        <Route path="post" element={<Post />}>
-          <Route path=":id" element={<PostId />} />
-          <Route path=":id/edit" element={<PostIdEdit />} />
-          <Route path=":id/message" element={<PostIDMessage />} />
-        </Route>
+        <Route path="post" element={<Post />} />
+        <Route path="post/:id" element={<PostId />} />
+        <Route path="post/:id/edit" element={<PostIdEdit />} />
+        <Route path="post/:id/message" element={<PostIDMessage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>

@@ -1,15 +1,13 @@
 import { useState } from "react"
 import styles from "./Dropdown.module.css"
+import clsx from "clsx"
 
-const Dropdown = ({
-  options = [],
-  placeholder = "Placeholder",
-  onSelect,
-}) => {
+const Dropdown = ({ options = [], placeholder = "Placeholder", onSelect }) => {
   const [isOpen, setIsOpen] = useState(false)
   const [selectedOption, setSelectedOption] = useState("")
 
-  const toggleDropdown = () => {
+  const toggleDropdown = (e) => {
+    e.preventDefault()
     setIsOpen(!isOpen)
   }
 
@@ -22,7 +20,10 @@ const Dropdown = ({
   return (
     <section className={styles.theme}>
       <div className={styles.select} onClick={toggleDropdown}>
-        <button className={styles.placeholder} name="dropdown">
+        <button
+          className={clsx(styles.placeholder, { [styles.focus]: isOpen })}
+          name="dropdown"
+        >
           {selectedOption || placeholder}
         </button>
         {isOpen && (

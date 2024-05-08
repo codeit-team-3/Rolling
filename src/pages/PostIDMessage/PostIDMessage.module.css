@@ -1,0 +1,46 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  margin: 47px auto;
+  padding: 0 24px;
+  max-width: 720px;
+  min-width: 320px;
+
+  > button {
+    width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    input {
+      width: 100%;
+    }
+
+    .dropdown {
+      > section,
+      > section > div,
+      > section > div > button,
+      > section > div ul {
+        width: 100%;
+        max-width: none;
+      }
+    }
+  }
+}
+
+.formGroup {
+  > label {
+    display: inline-block;
+    margin-bottom: 12px;
+    font-weight: 700;
+    font-size: var(--font-size24);
+    color: var(--gray-900);
+  }
+}
+
+.textEditor {
+  height: 260px;
+  > div > div {
+    height: 70%;
+  }
+}

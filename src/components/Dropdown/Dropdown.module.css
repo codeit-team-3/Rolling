@@ -24,7 +24,7 @@
   background-position: 95% 50%;
 }
 
-.placeholder:focus {
+.placeholder.focus {
   background: var(--white) url("../../../src/assets/ic-arrow_down.svg")
     no-repeat right;
   background-position: 95% 50%;
@@ -32,7 +32,7 @@
   color: var(--gray-900);
 }
 
-.placeholder:hover {
+.placeholder:hover:not(.focus) {
   border: 1px solid var(--gray-500);
 }
 
@@ -51,6 +51,7 @@
 .option {
   color: var(--gray-900);
 }
+
 .option:hover {
   background: var(--gray-100);
 }

@@ -230,5 +230,6 @@ input[type="password"]::-ms-clear {
 button {
   outline: none;
   border: none;
+  background-color: transparent;
   cursor: pointer;
 }
