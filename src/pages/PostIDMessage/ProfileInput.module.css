@@ -1,0 +1,70 @@
+.profileImageGroup {
+  display: flex;
+  gap: 32px;
+
+  > input {
+    display: none;
+  }
+}
+
+.profileLabel {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  background-color: var(--gray-300);
+  cursor: pointer;
+
+  > i {
+    width: 32px;
+    height: 32px;
+  }
+
+  > img {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    object-fit: cover;
+  }
+
+  > button {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 24px;
+    height: 24px;
+    border: 2px solid var(--white);
+
+    > i {
+      width: 10px;
+      height: 10px;
+    }
+  }
+}
+
+.profileSelectSection {
+  font-weight: 400;
+  font-size: var(--font-size16);
+  color: var(--gray-500);
+
+  > div {
+    display: flex;
+    gap: 4px;
+    margin-top: 12px;
+
+    @media (max-width: 768px) {
+      flex-wrap: wrap;
+
+      > button,
+      > button div,
+      > button img {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
+}

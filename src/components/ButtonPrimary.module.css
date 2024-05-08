@@ -1,0 +1,39 @@
+.primaryButton {
+  border: none;
+  background-color: #9747ff;
+  color: var(--white);
+  text-align: center;
+
+  &:active:not(:disabled) {
+    background-color: #9747ff;
+  }
+
+  &:disabled {
+    background-color: var(--gray-300);
+  }
+
+  &:hover:not(:disabled) {
+    background-color: var(--purple-700);
+  }
+
+  &:active:not(:disabled),
+  &:focus:not(:disabled) {
+    background-color: var(--purple-800);
+  }
+}
+
+.btn56 {
+  width: 208px;
+  height: 56px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.btn40 {
+  width: 122px;
+  height: 40px;
+  border-radius: 6px;
+  font-weight: 400;
+  font-size: 16px;
+}
