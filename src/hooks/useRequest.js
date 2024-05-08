@@ -1,5 +1,5 @@
 import { useCallback } from "react"
-import fetcher from "../apis/axiosInstance"
+import fetcher from "../apis/api"
 
 const useRequest = () => {
   const request = useCallback(async (config) => {
