@@ -6,10 +6,10 @@ import ProfileInput from "./ProfileInput"
 import TextEditor from "../../components/TextEditor"
 import Dropdown from "../../components/Dropdown/Dropdown"
 import Button from "../../components/Button"
-import { createRecipientMessage } from "../../apis/recipients"
+import useRequest from "../../hooks/useRequest"
 import styles from "./PostIDMessage.module.css"
 
-const initialModel = {
+const MESSAGE_INITIAL_MODEL = {
   recipientId: "",
   sender: "",
   profileImageURL: "",
@@ -28,12 +28,23 @@ const FONT_OPTIONS = [
 ]
 
 const PostMessage = () => {
-  const [messageData, setMessageData] = useState(initialModel)
+  const [messageData, setMessageData] = useState(MESSAGE_INITIAL_MODEL)
   const [isFormValid, setIsFormValid] = useState(false)
   const { pathname } = useLocation()
   const navigate = useNavigate()
+  const request = useRequest()
 
   const recipientId = pathname.split("/")[2]
+
+  const createRecipientMessage = async () => {
+    const { error } = request({
+      url: `/recipients/${recipientId}/messages/`,
+      method: "POST",
+      data: messageData,
+    })
+
+    if (error) console.log("메세지를 생성하는데 실패했습니다", error)
+  }
 
   const handleChangeData = useCallback((key, value) => {
     setMessageData((prevState) => ({
