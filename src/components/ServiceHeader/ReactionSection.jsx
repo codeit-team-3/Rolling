@@ -8,7 +8,7 @@ import styles from "./ReactionSection.module.css"
 
 const REACTIONS_LIMIT = 8
 
-const EmojiSection = ({ id, screenSize }) => {
+const ReactionSection = ({ id, screenSize }) => {
   const emojisRef = useRef(null)
   const emojiPickerRef = useRef(null)
   const [reactions, setReactions] = useState({})
@@ -163,4 +163,4 @@ const EmojiSection = ({ id, screenSize }) => {
   )
 }
 
-export default EmojiSection
+export default ReactionSection
