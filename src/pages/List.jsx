@@ -15,6 +15,7 @@ import "swiper/css/scrollbar"
 // import Swiper core and required modules
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules"
 
+
 const RECIPIENTS_LIMIT = 100
 
 const List = () => {
