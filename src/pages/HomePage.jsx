@@ -1,9 +1,8 @@
 import React from "react"
 import { Link } from "react-router-dom"
+import styles from "./HomePage.module.css"
 import Img_Frame from "../assets/img-banner_frame.svg"
 import Img_Emoji from "../assets/img-banner_emoji.png"
-import styles from "./HomePage.module.css"
-import Button from "../components/Button"
 
 const HomePage = () => {
   return (
@@ -46,11 +45,10 @@ const HomePage = () => {
             </div>
           </div>
         </div>
-        <div className={styles.List_Button_Container}>
-          <Button.Primary size="56">
-            <Link to="/list">구경해보기</Link>
-          </Button.Primary>
-        </div>
+
+        <button className={styles.List_Button}>
+          <Link to="/list">구경해보기</Link>
+        </button>
       </div>
     </>
   )

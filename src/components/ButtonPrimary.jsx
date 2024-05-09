@@ -1,5 +1,5 @@
 import React from "react"
-import PropTypes from "prop-types"
+import { Link } from "react-router-dom"
 import clsx from "clsx"
 import styles from "./ButtonPrimary.module.css"
 
@@ -9,25 +9,21 @@ const ButtonPrimary = ({
   onClick,
   disabled = false,
   size = 56,
+  link = null,
 }) => {
+  const ButtonComponent = link ? Link : "button"
+
   return (
-    <button
+    <ButtonComponent
+      to={link}
       className={clsx(styles.primaryButton, { [styles[`btn${size}`]]: size })}
       type={type}
       onClick={onClick}
       disabled={disabled}
     >
       {children}
-    </button>
+    </ButtonComponent>
   )
-}
-
-ButtonPrimary.propTypes = {
-  children: PropTypes.node.isRequired,
-  type: PropTypes.oneOf(["button", "submit"]),
-  onClick: PropTypes.func,
-  disabled: PropTypes.bool,
-  size: PropTypes.oneOf(["56", "40"]),
 }
 
 export default ButtonPrimary
