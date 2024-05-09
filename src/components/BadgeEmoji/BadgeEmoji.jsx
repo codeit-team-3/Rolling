@@ -1,5 +1,4 @@
 import React from "react"
-import PropTypes from "prop-types"
 import styles from "./BadgeEmoji.module.css"
 
 const BadgeEmoji = ({ emoji, count }) => {
@@ -8,11 +7,6 @@ const BadgeEmoji = ({ emoji, count }) => {
       {emoji} {count}
     </span>
   )
-}
-
-BadgeEmoji.propTypes = {
-  emoji: PropTypes.string,
-  count: PropTypes.number,
 }
 
 export default BadgeEmoji
