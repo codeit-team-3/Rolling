@@ -1,6 +1,6 @@
 import React, { useState } from "react"
-import ProfileImage from "../../components/ProfileImage"
-import ButtonCircleAdd from "../../components/ButtonCircleAdd"
+import ProfileImage from "../../components/ProfileImage/ProfileImage"
+import ButtonCircleAdd from "../../components/Button/ButtonCircleAdd"
 import styles from "./ProfileInput.module.css"
 import profileImage01 from "../../assets/img-profile01.jpeg"
 import profileImage02 from "../../assets/img-profile02.jpeg"
