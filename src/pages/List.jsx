@@ -39,7 +39,7 @@ const List = () => {
     const { data, error } = await request({
       url: "recipients/",
       method: "get",
-      params: { limit: RECIPIENTS_LIMIT, offset: offset},
+      params: { limit: RECIPIENTS_LIMIT, offset: offset },
     })
 
     if (data) setDataRecent(data.results)
@@ -47,8 +47,8 @@ const List = () => {
   }
 
   useEffect(() => {
-    getRecipientsPopular();
-    getRecipientsRecent();
+    getRecipientsPopular()
+    getRecipientsRecent()
   }, [])
 
   return (
