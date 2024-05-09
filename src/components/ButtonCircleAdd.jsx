@@ -1,5 +1,4 @@
 import React from "react"
-import PropTypes from "prop-types"
 import styles from "./ButtonCircleAdd.module.css"
 
 const Button = ({ onClick, disabled = false }) => {
@@ -13,11 +12,6 @@ const Button = ({ onClick, disabled = false }) => {
       <i className="ic-plus"></i>
     </button>
   )
-}
-
-Button.propTypes = {
-  onClick: PropTypes.func,
-  disabled: PropTypes.bool,
 }
 
 export default Button
