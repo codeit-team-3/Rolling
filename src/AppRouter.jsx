@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom"
-import AppLayout from "./components/AppLayout"
+import AppLayout from "./components/AppLayout/AppLayout"
 import HomePage from "./pages/HomePage"
 import List from "./pages/List"
 import Post from "./pages/Post"
