@@ -1,5 +1,5 @@
 import React from "react"
-import ProfileImage from "./ProfileImage"
+import ProfileImage from "../ProfileImage/ProfileImage"
 import styles from "./ContributorsInfo.module.css"
 
 const ContributorsInfo = ({ recentMessages, messageCount }) => {
