@@ -8,10 +8,10 @@ import { useNavigate } from "react-router-dom"
 // import Swiper from 'swiper';
 import { Swiper, SwiperSlide } from "swiper/react"
 // import Swiper and modules styles
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
+import "swiper/css"
+import "swiper/css/navigation"
+import "swiper/css/pagination"
+import "swiper/css/scrollbar"
 // import Swiper core and required modules
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules"
 
@@ -62,7 +62,7 @@ const List = () => {
       <secion className={styles.wrapper}>
         <div className={styles.header}>최근에 만든 롤링 페이퍼 ⭐️</div>
         <div className={styles.list}>
-        <Swiper
+          <Swiper
             modules={[Navigation, Pagination, Scrollbar, A11y]}
             spaceBetween={50}
             slidesPerView={4}
