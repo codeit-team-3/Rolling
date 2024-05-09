@@ -32,22 +32,6 @@
   gap: 28px 24px;
   max-width: 1200px;
 }
-@media (min-width: 768px) and (max-width: 1199px) {
-  .card-list {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .card-list-container {
-    max-width: 720px;
-  }
-}
-@media (min-width: 375px) and (max-width: 767px) {
-  .card-list {
-    grid-template-columns: repeat(1, 1fr);
-  }
-  .card-list-container {
-    max-width: 352px;
-  }
-}
 
 .modal-container {
   position: fixed;
@@ -70,4 +54,54 @@
   position: absolute;
   top: -58px;
   right: 0px;
+}
+
+.delete-page-button {
+  width: 120px;
+  height: 39px;
+  border-radius: 6px;
+  background-color: var(--purple-600);
+  color: var(--white);
+  font-size: var(--font-size16);
+  position: absolute;
+  top: -58px;
+  right: 0px;
+}
+
+
+@media (min-width: 375px) and (max-width: 1199px) {
+  .delete-page-button {
+    height: 55px;
+    border-radius: 12px;
+    font-size: var(--font-size18);
+    font-family: var(--font-family-Bold);
+    position: fixed;
+    bottom: 24px;
+    top: auto;
+    right:auto;
+    left: auto;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .card-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .card-list-container {
+    max-width: 720px;
+  }
+  .delete-page-button{
+    width: 720px;
+  }
+}
+@media (min-width: 375px) and (max-width: 767px) {
+  .card-list {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .card-list-container {
+    max-width: 352px;
+  }
+  .delete-page-button{
+    width: 352px;
+  }
 }

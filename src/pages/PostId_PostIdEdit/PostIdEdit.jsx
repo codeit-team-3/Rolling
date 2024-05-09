@@ -1,56 +1,56 @@
 import React, { useCallback, useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
-import {
-  deleteRecipient,
-  getRecipient,
-  getRecipientMessages,
-} from "../../services/apiRecipients"
 import ServiceHeader from "../../components/ServiceHeader/ServiceHeader"
 import Card from "../../components/Card"
 import styles from "./PostId.module.css"
-import { deleteMessage } from "../../services/apiMessage"
-import ButtonPrimary from "../../components/ButtonPrimary"
+import useRequest from "../../hooks/useRequest"
 
 const PostIdEdit = () => {
   const { id } = useParams()
   const navigate = useNavigate()
   const [recipient, setRecipient] = useState(null)
   const [messages, setMessages] = useState([])
-  const [selectedMessage, setSelectedMessage] = useState(null)
   const [loading, setLoading] = useState(false)
   const [nextPageUrl, setNextPageUrl] = useState("")
   const [error, setError] = useState(null)
 
+  const request = useRequest()
+
   useEffect(() => {
     const fetchInitialData = async () => {
-      try {
-        const recipientData = await getRecipient(id)
-        setRecipient(recipientData)
-        const messageData = await getRecipientMessages(id)
-        setMessages(messageData.results)
-        setNextPageUrl(messageData.next)
-      } catch (error) {
-        console.error("Error fetching data:", error)
-        setError(error)
+      setLoading(true)
+      const recipientResult = await request({ url: `/recipients/${id}/` })
+      const messagesResult = await request({
+        url: `/recipients/${id}/messages/`,
+      })
+
+      if (recipientResult.error) setError(recipientResult.error)
+      else setRecipient(recipientResult.data)
+
+      if (messagesResult.error) setError(messagesResult.error)
+      else {
+        setMessages(messagesResult.data.results)
+        setNextPageUrl(messagesResult.data.next)
       }
+      setLoading(false)
     }
 
     fetchInitialData()
-  }, [id])
+  }, [id, request])
 
   const fetchMessages = async () => {
-    console.log("fetchMessages 함수")
     if (!nextPageUrl || loading) return
     setLoading(true)
-    try {
-      const response = await fetch(nextPageUrl)
-      const data = await response.json()
-      setMessages((prevMessages) => [...prevMessages, ...data.results])
-      setNextPageUrl(data.next)
+    const messagesResult = await request({ url: nextPageUrl })
+    if (messagesResult.error) {
+      setError(messagesResult.error)
       setLoading(false)
-    } catch (error) {
-      console.error("Error fetching more messages:", error)
-      setError(error)
+    } else {
+      setMessages((prevMessages) => [
+        ...prevMessages,
+        ...messagesResult.data.results,
+      ])
+      setNextPageUrl(messagesResult.data.next)
       setLoading(false)
     }
   }
@@ -58,7 +58,7 @@ const PostIdEdit = () => {
   const handleScroll = useCallback(() => {
     const scrollPosition =
       window.innerHeight + document.documentElement.scrollTop
-    const threshold = document.documentElement.offsetHeight - 100 // 페이지 끝에서 100px 정도 남았을 때 호출
+    const threshold = document.documentElement.offsetHeight - 100 
 
     if (scrollPosition < threshold || loading) {
       return
@@ -73,33 +73,38 @@ const PostIdEdit = () => {
 
   const handleDeleteMessage = async (messageId) => {
     setLoading(true)
-    try {
-      await deleteMessage(messageId)
+    const result = await request({
+      url: `/messages/${messageId}/`,
+      method: "delete",
+    })
+    if (result.error) {
+      console.error("Error deleting message:", result.error)
+      setError(result.error)
+    } else {
       setMessages((prevMessages) =>
         prevMessages.filter((message) => message.id !== messageId),
       )
-    } catch (error) {
-      console.error("Error deleting message:", error)
-      setError(error)
     }
     setLoading(false)
   }
 
   const handleDeletePage = async (recipientId) => {
     setLoading(true)
-    try {
-      //진짜 삭제할건지 물어보는 창 만들지말지 고민......
-      await deleteRecipient(recipientId)
+    const result = await request({
+      url: `/recipients/${recipientId}/`,
+      method: "delete",
+    })
+    if (result.error) {
+      console.error("Error deleting recipient:", result.error)
+      setError(result.error)
+    } else {
       navigate("/list")
-    } catch (error) {
-      console.error("recipient를 삭제하는 동안 오류가 발생했습니다:", error)
-      setError(error)
     }
     setLoading(false)
   }
 
   if (error) return <div>Error: {error}</div>
-  if (!recipient) return <div>Loading...</div> //<-이거 스타일 수정해야함 @!!!
+  if (!recipient) return <div>Loading...</div>
 
   return (
     <div
@@ -112,15 +117,12 @@ const PostIdEdit = () => {
     >
       <ServiceHeader recipient={recipient} />
       <div className={styles["card-list-container"]}>
-        <div className={styles["button-container"]}>
-          <ButtonPrimary
-            className={styles["delete-page-button"]}
-            onClick={() => handleDeletePage(recipient.id)}
-            size="40"
-          >
-            삭제하기
-          </ButtonPrimary>
-        </div>
+        <button
+          className={styles["delete-page-button"]}
+          onClick={() => handleDeletePage(recipient.id)}
+        >
+          페이지 삭제하기
+        </button>
         <ul className={styles["card-list"]}>
           {messages.map((message) => (
             <li key={message.id}>

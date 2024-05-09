@@ -16,7 +16,6 @@
   font-size: var(--font-size20);
   font-family: var(--font-family-Regular);
   color: var(--gray-400);
-  
 }
 .message-info-container {
   width: 100%;
@@ -77,7 +76,7 @@
   text-align: left;
   overflow-y: auto;
   scrollbar-width: thin;
-  
+
   font-size: var(--font-size18);
   font-family: var(--font-family-Regular);
   line-height: 28px;
