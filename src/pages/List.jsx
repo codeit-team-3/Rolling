@@ -15,27 +15,40 @@ import "swiper/css/scrollbar"
 // import Swiper core and required modules
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules"
 
-const RECIPIENTS_LIMIT = 20
+const RECIPIENTS_LIMIT = 100
 
 const List = () => {
   const request = useRequest()
-  const [data, setData] = useState([])
+  const [dataPopular, setDataPopular] = useState([])
+  const [dataRecent, setDataRecent] = useState([])
   const [offset, setOffset] = useState(0)
   const nav = useNavigate()
 
-  const getRecipients = async () => {
+  const getRecipientsPopular = async () => {
     const { data, error } = await request({
       url: "recipients/",
       method: "get",
       params: { limit: RECIPIENTS_LIMIT, offset: offset, sort: "like" },
     })
 
-    if (data) setData(data.results)
+    if (data) setDataPopular(data.results)
+    else if (error) console.log("오류로 리액션을 불러오는데에 실패하였습니다.")
+  }
+
+  const getRecipientsRecent = async () => {
+    const { data, error } = await request({
+      url: "recipients/",
+      method: "get",
+      params: { limit: RECIPIENTS_LIMIT, offset: offset},
+    })
+
+    if (data) setDataRecent(data.results)
     else if (error) console.log("오류로 리액션을 불러오는데에 실패하였습니다.")
   }
 
   useEffect(() => {
-    getRecipients()
+    getRecipientsPopular();
+    getRecipientsRecent();
   }, [])
 
   return (
@@ -49,7 +62,7 @@ const List = () => {
             slidesPerView={4}
             navigation
           >
-            {data.map((item) => {
+            {dataPopular.map((item) => {
               return (
                 <SwiperSlide key={item.id}>
                   <CardList {...item} />
@@ -68,7 +81,7 @@ const List = () => {
             slidesPerView={4}
             navigation
           >
-            {data.map((item) => {
+            {dataRecent.map((item) => {
               return (
                 <SwiperSlide key={item.id}>
                   <CardList {...item} />
