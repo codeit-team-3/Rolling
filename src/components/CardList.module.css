@@ -1,0 +1,44 @@
+.container {
+  display: flex;
+  margin: 10px;
+}
+
+.cardList {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  
+  min-width: 275px;
+  min-height: 260px;
+  width: 100%;
+  padding: 30px 24px 20px 24px;
+  border-radius: 16px;
+
+  position: relative;
+}
+
+.reactions {
+  display: flex;
+  gap: 6px;
+  border-top: 1px solid;
+  padding-top: 15px;
+  
+  position: absolute;
+  bottom: 20px;
+}
+
+.green {
+  background-color: #D0F5C3;
+}
+
+.beige {
+  background-color: #FFE2AD;
+}
+
+.purple {
+  background-color: #ECD9FF;
+}
+
+.blue {
+  background-color: #B1E4FF;
+}
