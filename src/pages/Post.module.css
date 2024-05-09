@@ -1,0 +1,80 @@
+.home-logo {
+  margin-left: 360px;
+}
+
+.post-main {
+  max-width: 720px;
+  margin: 57px auto;
+
+  & input {
+    border: 1px solid var(--gray-300);
+  }
+}
+
+.explanation-to {
+  color: var(--gray-900);
+  font-size: var(--font-size24);
+  font-family: var(--font-family-Bold);
+  height: 42px;
+}
+
+.explanation-screen {
+  color: var(--gray-900);
+  font-size: var(--font-size24);
+  font-family: var(--font-family-Bold);
+  height: 36px;
+}
+
+.explanation-little {
+  margin-top: 4px;
+  font-size: var(--font-size16);
+  color: var(--gray-500);
+}
+
+.select-buttons {
+  margin: 24px 0 45px;
+}
+
+.post-create {
+  width: 100%;
+  height: 56px;
+  border-radius: 12px;
+  background-color: var(--purple-600);
+  color: var(--white);
+  margin-top: 45px;
+  font-size: var(--font-size18);
+  font-family: var(--font-family-Bold);
+
+  &.post-create:disabled {
+    background-color: var(--gray-400);
+    cursor: default;
+  }
+}
+
+.option-container {
+  display: flex;
+}
+
+@media screen and (max-width: 1279px) {
+  .post-main {
+    margin-top: 49px;
+  }
+
+  .post-create {
+    margin-top: 316px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .post-main {
+    padding: 20px;
+  }
+
+  .select-buttons {
+    margin-bottom: 28px;
+  }
+
+  .post-create {
+    margin-top: 58px;
+  }
+}

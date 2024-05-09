@@ -20,4 +20,14 @@ const fetcher = async (config) =>
       throw error
     })
 
+export const createPost = async (postData) => {
+  try {
+    const response = await axiosInstance.post("/recipients/", postData)
+    return response.data
+  } catch (error) {
+    console.error("포스트 생성 중 오류가 발생했습니다:", error) // 에러는 콘솔로만 출력
+    throw error
+  }
+}
+
 export default fetcher

@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import styles from "./Option.module.css"
 
 const Option = ({ optionType, onSelectOption }) => {
@@ -12,6 +12,10 @@ const Option = ({ optionType, onSelectOption }) => {
   const [selectedOption, setSelectedOption] = useState(
     optionType === "color" ? "beige" : "image1",
   )
+
+  useEffect(() => {
+    setSelectedOption(optionType === "color" ? "beige" : "image1")
+  }, [optionType])
 
   const handleOptionClick = (option) => {
     setSelectedOption(option)
