@@ -1,8 +1,8 @@
 import { useState } from "react"
 import Badge from "./Badge"
 import ButtonPrimary from "./ButtonPrimary"
-import ProfileImage from "./ProfileImage"
-import { formatDateString } from "../utils/formatDateString"
+import ProfileImage from "../ProfileImage/ProfileImage"
+import { formatDateString } from "../../utils/formatDateString"
 import styles from "./Modal.module.css"
 
 const Modal = ({ messageData }) => {
