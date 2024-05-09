@@ -5,8 +5,8 @@ import Card from "../../components/Card"
 import CardAdd from "../../components/CardAdd"
 import Modal from "../../components/Modal"
 import ButtonPrimary from "../../components/ButtonPrimary"
-import styles from "./PostId.module.css"
 import useRequest from "../../hooks/useRequest"
+import styles from "./PostId.module.css"
 
 const PostId = () => {
   const { id } = useParams()
@@ -17,47 +17,51 @@ const PostId = () => {
   const [loading, setLoading] = useState(false)
   const [nextPageUrl, setNextPageUrl] = useState("")
   const [error, setError] = useState(null)
-  
-  const request = useRequest();
+
+  const request = useRequest()
 
   useEffect(() => {
     const fetchInitialData = async () => {
-      setLoading(true);
-      const recipientResult = await request({ url: `/recipients/${id}/` });
-      const messagesResult = await request({ url: `/recipients/${id}/messages/` });
-      
-      if (recipientResult.error) setError(recipientResult.error);
-      else setRecipient(recipientResult.data);
+      setLoading(true)
+      const recipientResult = await request({ url: `/recipients/${id}/` })
+      const messagesResult = await request({
+        url: `/recipients/${id}/messages/`,
+      })
 
-      if (messagesResult.error) setError(messagesResult.error);
+      if (recipientResult.error) setError(recipientResult.error)
+      else setRecipient(recipientResult.data)
+
+      if (messagesResult.error) setError(messagesResult.error)
       else {
-        setMessages(messagesResult.data.results);
-        setNextPageUrl(messagesResult.data.next);
+        setMessages(messagesResult.data.results)
+        setNextPageUrl(messagesResult.data.next)
       }
-      setLoading(false);
-    };
+      setLoading(false)
+    }
 
-    fetchInitialData();
-  }, [id, request]);
+    fetchInitialData()
+  }, [id, request])
 
   const fetchMessages = async () => {
-    if (!nextPageUrl || loading) return;
-    setLoading(true);
-    const messagesResult = await request({ url: nextPageUrl });
-    if (messagesResult.error) {
-      setError(messagesResult.error);
-      setLoading(false);
+    if (!nextPageUrl || loading) return
+    setLoading(true)
+
+    const { data, error } = await request({ url: nextPageUrl })
+
+    if (error) {
+      setError(error)
+      setLoading(false)
     } else {
-      setMessages((prevMessages) => [...prevMessages, ...messagesResult.data.results]);
-      setNextPageUrl(messagesResult.data.next);
-      setLoading(false);
+      setMessages((prevMessages) => [...prevMessages, ...data.results])
+      setNextPageUrl(data.next)
+      setLoading(false)
     }
-  };
+  }
 
   const handleScroll = useCallback(() => {
     const scrollPosition =
       window.innerHeight + document.documentElement.scrollTop
-    const threshold = document.documentElement.offsetHeight - 100 
+    const threshold = document.documentElement.offsetHeight - 100
 
     if (scrollPosition < threshold || loading) {
       return

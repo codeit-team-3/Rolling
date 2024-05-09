@@ -2,8 +2,8 @@ import React, { useCallback, useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import ServiceHeader from "../../components/ServiceHeader/ServiceHeader"
 import Card from "../../components/Card"
-import styles from "./PostId.module.css"
 import useRequest from "../../hooks/useRequest"
+import styles from "./PostId.module.css"
 
 const PostIdEdit = () => {
   const { id } = useParams()
@@ -41,16 +41,15 @@ const PostIdEdit = () => {
   const fetchMessages = async () => {
     if (!nextPageUrl || loading) return
     setLoading(true)
-    const messagesResult = await request({ url: nextPageUrl })
-    if (messagesResult.error) {
-      setError(messagesResult.error)
+
+    const { data, error } = await request({ url: nextPageUrl })
+
+    if (error) {
+      setError(error)
       setLoading(false)
     } else {
-      setMessages((prevMessages) => [
-        ...prevMessages,
-        ...messagesResult.data.results,
-      ])
-      setNextPageUrl(messagesResult.data.next)
+      setMessages((prevMessages) => [...prevMessages, ...data.results])
+      setNextPageUrl(data.next)
       setLoading(false)
     }
   }
@@ -58,7 +57,7 @@ const PostIdEdit = () => {
   const handleScroll = useCallback(() => {
     const scrollPosition =
       window.innerHeight + document.documentElement.scrollTop
-    const threshold = document.documentElement.offsetHeight - 100 
+    const threshold = document.documentElement.offsetHeight - 100
 
     if (scrollPosition < threshold || loading) {
       return
