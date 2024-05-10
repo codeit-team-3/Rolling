@@ -1,19 +1,14 @@
-import styles from "./List.module.css"
 import { useState, useEffect, useCallback, useRef } from "react"
-import CardList from "../components/CardList"
-import ButtonPrimary from "../components/ButtonPrimary"
-import useRequest from "../hooks/useRequest"
-import React from "react"
-import { useNavigate } from "react-router-dom"
-// import Swiper from 'swiper';
 import { Swiper, SwiperSlide } from "swiper/react"
-// import Swiper and modules styles
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules"
 import "swiper/css"
 import "swiper/css/navigation"
 import "swiper/css/pagination"
 import "swiper/css/scrollbar"
-// import Swiper core and required modules
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules"
+import styles from "./List.module.css"
+import useRequest from "../hooks/useRequest"
+import CardList from '../components/CardList/CardList'
+import ButtonPrimary from "../components/Button/ButtonPrimary"
 
 
 const RECIPIENTS_LIMIT = 100
@@ -22,14 +17,12 @@ const List = () => {
   const request = useRequest()
   const [dataPopular, setDataPopular] = useState([])
   const [dataRecent, setDataRecent] = useState([])
-  const [offset, setOffset] = useState(0)
-  const nav = useNavigate()
 
   const getRecipientsPopular = async () => {
     const { data, error } = await request({
       url: "recipients/",
       method: "get",
-      params: { limit: RECIPIENTS_LIMIT, offset: offset, sort: "like" },
+      params: { limit: RECIPIENTS_LIMIT, sort: "like" },
     })
 
     if (data) setDataPopular(data.results)
@@ -40,7 +33,7 @@ const List = () => {
     const { data, error } = await request({
       url: "recipients/",
       method: "get",
-      params: { limit: RECIPIENTS_LIMIT, offset: offset },
+      params: { limit: RECIPIENTS_LIMIT },
     })
 
     if (data) setDataRecent(data.results)
@@ -93,11 +86,7 @@ const List = () => {
         </div>
       </secion>
       <secion className={styles.button}>
-        <ButtonPrimary
-          onClick={() => {
-            nav("/post")
-          }}
-        >
+        <ButtonPrimary link="/post">
           나도 만들어보기
         </ButtonPrimary>
       </secion>
