@@ -10,6 +10,7 @@
 
 .Point_Container {
   margin-top: 60px;
+  margin-bottom: 24px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -129,6 +130,7 @@ img {
     button {
       width: 100%;
       max-width: 720px;
+      margin-bottom: 24px;
     }
   }
 }
