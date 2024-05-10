@@ -6,7 +6,10 @@ import ArrowButton from "../ArrowButton/ArrowButton"
 import useRequest from "../../hooks/useRequest"
 import styles from "./ReactionSection.module.css"
 
-const REACTIONS_LIMIT = 8
+const REACTIONS_LIMIT = {
+  small: 6,
+  medium: 8,
+}
 
 const ReactionSection = ({ id, screenSize }) => {
   const emojisRef = useRef(null)
@@ -23,12 +26,12 @@ const ReactionSection = ({ id, screenSize }) => {
     const { data, error } = await request({
       url: `recipients/${id}/reactions/`,
       method: "get",
-      params: { limit: REACTIONS_LIMIT, offset: offset },
+      params: { limit: REACTIONS_LIMIT[screenSize], offset: offset },
     })
 
     if (data) setReactions(data)
     else if (error) alert("오류로 리액션을 불러오는데에 실패하였습니다.")
-  }, [id, offset, request])
+  }, [id, offset, request, screenSize])
 
   const getTopReactions = useCallback(async () => {
     const { data } = await request({
@@ -131,13 +134,17 @@ const ReactionSection = ({ id, screenSize }) => {
                 {reactions.previous && (
                   <ArrowButton
                     direction="left"
-                    onClick={() => setOffset((prev) => prev - REACTIONS_LIMIT)}
+                    onClick={() =>
+                      setOffset((prev) => prev - REACTIONS_LIMIT[screenSize])
+                    }
                   />
                 )}
                 {reactions.next && (
                   <ArrowButton
                     direction="right"
-                    onClick={() => setOffset((prev) => prev + REACTIONS_LIMIT)}
+                    onClick={() =>
+                      setOffset((prev) => prev + REACTIONS_LIMIT[screenSize])
+                    }
                   />
                 )}
               </div>

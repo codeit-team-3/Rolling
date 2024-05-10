@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useRef } from "react"
 import Button from "../Button/Button"
 import ContributorsInfo from "../ContributorsInfo/ContributorsInfo"
 import ReactionSection from "./ReactionSection"
@@ -19,6 +19,7 @@ const ServiceHeader = ({ recipient }) => {
   const [screenSize, setScreenSize] = useState("medium")
   const [showDropdown, setShowDropdown] = useState(false)
   const [showToast, setShowToast] = useState(false)
+  const dropdownRef = useRef()
   const { width } = useWindowSize()
 
   useEffect(() => {
@@ -36,6 +37,27 @@ const ServiceHeader = ({ recipient }) => {
     setShowDropdown(false)
     setShowToast(true)
   }
+
+  useEffect(() => {
+    const handleOutsideClose = (e) => {
+      if (showDropdown && !dropdownRef.current.contains(e.target))
+        setShowDropdown(false)
+    }
+
+    document.addEventListener("click", handleOutsideClose)
+
+    return () => document.removeEventListener("click", handleOutsideClose)
+  }, [showDropdown])
+
+  useEffect(() => {
+    if (showToast) {
+      const timer = setTimeout(() => {
+        setShowToast((prevState) => !prevState)
+      }, 3000)
+
+      return () => clearTimeout(timer)
+    }
+  }, [showToast])
 
   return (
     <div className={styles.header}>
@@ -64,7 +86,7 @@ const ServiceHeader = ({ recipient }) => {
 
           <div className={styles.line} />
 
-          <div className={styles.shareSection}>
+          <div className={styles.shareSection} ref={dropdownRef}>
             <Button.Outlined
               icon="share"
               size="36"
