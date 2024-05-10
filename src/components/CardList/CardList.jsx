@@ -34,11 +34,11 @@ const CardList = ({
     },
   }
 
-const nav = useNavigate()
+  const nav = useNavigate()
 
-const onClickHandler = () => {
-  nav(`/post/${id}`)
-}
+  const onClickHandler = () => {
+    nav(`/post/${id}`)
+  }
 
   return (
     <div

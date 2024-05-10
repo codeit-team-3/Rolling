@@ -9,9 +9,8 @@ import "swiper/css/pagination"
 import "swiper/css/scrollbar"
 import styles from "./List.module.css"
 import useRequest from "../hooks/useRequest"
-import CardList from '../components/CardList/CardList'
+import CardList from "../components/CardList/CardList"
 import ButtonPrimary from "../components/Button/ButtonPrimary"
-
 
 const RECIPIENTS_LIMIT = 100
 
@@ -88,9 +87,7 @@ const List = () => {
         </div>
       </secion>
       <Link to="/post">
-        <ButtonPrimary>
-        나도 만들어보기
-        </ButtonPrimary>
+        <ButtonPrimary>나도 만들어보기</ButtonPrimary>
       </Link>
     </div>
   )

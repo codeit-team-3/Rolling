@@ -67,15 +67,13 @@
   border-radius: 16px;
 }
 
-
 @media screen and (max-width: 768px) {
-  
   .content {
     .name {
       font-size: var(--font-size18);
       font-weight: 700;
     }
-  
+
     p {
       font-size: var(--font-size14);
     }

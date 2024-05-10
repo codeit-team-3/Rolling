@@ -10,10 +10,8 @@
 
   > a > button {
     min-width: 240px;
-  }  
+  }
 }
-
-
 
 .wrapper {
   margin-top: 50px;
@@ -29,27 +27,25 @@
   margin-bottom: 16px;
 }
 
-
-
-
 @media screen and (max-width: 1279px) {
   .container {
     margin: 0px auto;
     width: 768px;
 
-    > a, button {
+    > a,
+    button {
       width: 100%;
     }
   }
 }
 
 @media screen and (max-width: 768px) {
-  
   .container {
     margin: 0px auto;
     width: 360px;
 
-    > a, button {
+    > a,
+    button {
       width: 100%;
     }
   }
