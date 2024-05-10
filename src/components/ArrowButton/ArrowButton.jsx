@@ -1,4 +1,4 @@
-import "../styles/icons.css"
+import "../../styles/icons.css"
 import styles from "./ArrowButton.module.css"
 
 function ArrowButton({ direction = "left", onClick }) {

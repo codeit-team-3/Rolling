@@ -39,6 +39,7 @@
   background-color: var(--white);
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
   overflow-y: auto;
+  z-index: 100;
 
   .allEmojis {
     display: flex;
@@ -89,6 +90,7 @@
     position: absolute;
     top: 56px;
     right: 0;
+    z-index: 100;
   }
 
   @media (min-width: 768px) {
