@@ -94,3 +94,17 @@
 .delete-button {
   margin-right: 24px;
 }
+
+@media (max-width: 1199px) {
+  .card {
+    width: 352px;
+    height: 284px;
+  }
+}
+
+@media (max-width: 767px) {
+  .card {
+    max-width: 320px;
+    height: 230px;
+  }
+}
