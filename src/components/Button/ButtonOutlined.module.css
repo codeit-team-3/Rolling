@@ -1,4 +1,7 @@
 .outlinedButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 6px;
   border: 1px solid var(--gray-300);
   background-color: var(--white);
