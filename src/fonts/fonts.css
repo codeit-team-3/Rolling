@@ -16,13 +16,84 @@ body {
 }
 
 @font-face {
-  font-family: "Pretendard-Regular";
-  src: url("./Pretendard-Regular.woff");
-  font-weight: 400;
+  font-family: "Pretendard-Bold";
+  src:
+    url("subset-Pretendard-Bold.woff2") format("woff2"),
+    url("subset-Pretendard-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-  font-family: "Pretendard-Bold";
-  src: url("./Pretendard-Bold.woff");
+  font-family: "Pretendard-Regular";
+  src:
+    url("subset-Pretendard-Regular.woff2") format("woff2"),
+    url("subset-Pretendard-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 신디나루  */
+@font-face {
+  font-family: "신디나루B";
+  src:
+    url("subset-KoreaSDNR-B.woff2") format("woff2"),
+    url("subset-KoreaSDNR-B.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 개구 */
+@font-face {
+  font-family: "Gaegu";
+  src:
+    url("subset-Gaegu-Bold.woff2") format("woff2"),
+    url("subset-Gaegu-Bold.woff") format("woff");
   font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gaegu";
+  src:
+    url("subset-Gaegu-Regular.woff2") format("woff2"),
+    url("subset-Gaegu-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gaegu";
+  src:
+    url("subset-Gaegu-Light.woff2") format("woff2"),
+    url("subset-Gaegu-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 나눔명조 */
+@font-face {
+  font-family: "나눔명조";
+  src:
+    url("subset-NanumMyeongjoBold.woff2") format("woff2"),
+    url("subset-NanumMyeongjoBold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "나눔명조";
+  src:
+    url("subset-NanumMyeongjo.woff2") format("woff2"),
+    url("subset-NanumMyeongjo.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }

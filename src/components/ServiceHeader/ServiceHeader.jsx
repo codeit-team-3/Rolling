@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react"
-import Button from "../Button"
-import ContributorsInfo from "../ContributorsInfo"
+import Button from "../Button/Button"
+import ContributorsInfo from "../ContributorsInfo/ContributorsInfo"
 import ReactionSection from "./ReactionSection"
-import Toast from "../Toast"
+import Toast from "../Toast/Toast"
 import useWindowSize from "../../hooks/useWindowSize"
 import styles from "./ServiceHeader.module.css"
 

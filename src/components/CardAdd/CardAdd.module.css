@@ -1,5 +1,5 @@
 .card {
-  width: 384px;
+  max-width: 384px;
   height: 280px;
   top: 3672px;
   left: 84px;
@@ -8,4 +8,5 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: var(--white);
 }

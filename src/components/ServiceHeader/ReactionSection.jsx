@@ -1,8 +1,8 @@
 import React, { useCallback, useEffect, useRef, useState } from "react"
 import EmojiPicker from "emoji-picker-react"
-import BadgeEmoji from "../BadgeEmoji"
-import Button from "../Button"
-import ArrowButton from "../ArrowButton"
+import BadgeEmoji from "../BadgeEmoji/BadgeEmoji"
+import Button from "../Button/Button"
+import ArrowButton from "../ArrowButton/ArrowButton"
 import useRequest from "../../hooks/useRequest"
 import styles from "./ReactionSection.module.css"
 

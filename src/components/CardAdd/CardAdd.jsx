@@ -1,4 +1,4 @@
-import ButtonCircleAdd from "./ButtonCircleAdd"
+import ButtonCircleAdd from "../Button/ButtonCircleAdd"
 import styles from "./CardAdd.module.css"
 
 const CardAdd = ({ onClickAddCardButton }) => {

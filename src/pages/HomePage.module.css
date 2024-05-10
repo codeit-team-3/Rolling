@@ -10,6 +10,7 @@
 
 .Point_Container {
   margin-top: 60px;
+  margin-bottom: 24px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -78,28 +79,6 @@ img {
   margin-right: 120px;
 }
 
-.List_Button {
-  background-color: var(--purple-600);
-  color: var(--white);
-  font-size: 18px;
-  line-height: 28px;
-  font-weight: 700;
-  border: none;
-  border-radius: 12px;
-  padding: 14px 24px;
-  width: 280px;
-  cursor: pointer;
-  margin-top: 24px;
-}
-
-.List_Button:hover {
-  background-color: var(--purple-700);
-}
-
-.List_Button:active {
-  background-color: var(--purple-800);
-}
-
 @media (max-width: 1199px) {
   .Point {
     display: flex;
@@ -113,16 +92,20 @@ img {
     margin-top: 40px;
     margin-left: 40px;
   }
+
   .Point1_Container2 {
     margin-bottom: 40px;
     margin-top: 0;
   }
+
   img {
     margin-bottom: 30px;
   }
+
   .Point_Tag {
     margin-top: 0;
   }
+
   .Point_Title {
     br {
       display: inline-block;
@@ -136,13 +119,19 @@ img {
     margin-top: 0;
     padding: 20px;
   }
+
   .Point2_Container2 {
     margin-top: 40px;
     margin-left: 40px;
   }
-  .List_Button {
-    width: 100%;
-    max-width: 720px;
+
+  .Main_Banner {
+    a,
+    button {
+      width: 100%;
+      max-width: 720px;
+      margin-bottom: 24px;
+    }
   }
 }
 
@@ -151,15 +140,18 @@ img {
     max-width: 320px;
     height: 352px;
   }
+
   .Point1_Container1 {
     margin-top: 20px;
     margin-left: 20px;
     max-width: 272px;
   }
+
   .Point_Title {
     font-size: 18px;
     line-height: 28px;
   }
+
   .Point_Description {
     font-size: 15px;
   }
@@ -184,7 +176,11 @@ img {
     max-width: 380px;
   }
 
-  .List_Button {
-    max-width: 320px;
+  .Main_Banner {
+    a,
+    button {
+      width: 100%;
+      max-width: 320px;
+    }
   }
 }
