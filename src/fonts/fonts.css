@@ -16,15 +16,23 @@ body {
 }
 
 @font-face {
-  font-family: "Pretendard-Regular";
-  src: url("./Pretendard-Regular.woff");
-  font-weight: 400;
+  font-family: "Pretendard-Bold";
+  src:
+    url("subset-Pretendard-Bold.woff2") format("woff2"),
+    url("subset-Pretendard-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-  font-family: "Pretendard-Bold";
-  src: url("./Pretendard-Bold.woff");
-  font-weight: bold;
+  font-family: "Pretendard-Regular";
+  src:
+    url("subset-Pretendard-Regular.woff2") format("woff2"),
+    url("subset-Pretendard-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
 /* 신디나루  */
