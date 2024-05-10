@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import ServiceHeader from "../../components/ServiceHeader/ServiceHeader"
-import Card from "../../components/Card"
+import Card from "../../components/Card/Card"
 import useRequest from "../../hooks/useRequest"
 import styles from "./PostId.module.css"
 

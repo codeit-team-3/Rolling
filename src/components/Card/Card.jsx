@@ -1,6 +1,6 @@
-import Badge from "./Badge"
+import Badge from "../Badge/Badge"
 import ProfileImage from "../ProfileImage/ProfileImage"
-import ButtonOutlined from "./ButtonOutlined"
+import ButtonOutlined from "../Button/ButtonOutlined"
 import { formatDateString } from "../../utils/formatDateString"
 import styles from "./Card.module.css"
 
