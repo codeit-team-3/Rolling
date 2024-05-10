@@ -31,7 +31,8 @@
   color: var(--gray-500);
 }
 
-.select-buttons {
+.select-buttons button {
+  background-color: var(--gray-100);
   margin: 24px 0 45px;
 }
 

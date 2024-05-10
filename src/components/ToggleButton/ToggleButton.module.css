@@ -6,7 +6,6 @@ button {
   border-radius: 6px;
   color: var(--gray-900);
   padding: 7px 16px;
-  background-color: var(--gray-100);
 }
 
 .selected-button {
