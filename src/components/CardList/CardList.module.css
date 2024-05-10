@@ -1,0 +1,64 @@
+.cardList {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 275px;
+  height: 260px;
+  padding: 30px 24px 20px 24px;
+  margin: 10px;
+  border-radius: 16px;
+  border: 1px solid #00000010;
+  background-size: cover;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 1;
+
+  .name {
+    font-size: var(--font-size24);
+    font-weight: 700;
+  }
+
+  p {
+    font-size: var(--font-size16);
+  }
+}
+
+.reactions {
+  display: flex;
+  gap: 6px;
+  width: 100%;
+  border-top: 1px solid #00000010;
+  padding-top: 15px;
+  z-index: 1;
+
+  > span {
+    height: 36px;
+    font-size: var(--font-size16);
+  }
+}
+
+.colorImage {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 50%;
+  height: 50%;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  background: #00000054;
+  border-radius: 16px;
+}

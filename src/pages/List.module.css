@@ -1,0 +1,26 @@
+.List {
+  max-width: 1160px;
+  margin: 0px auto;
+}
+
+.wrapper {
+  margin-top: 30px;
+
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.header {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.button {
+  width: 100%;
+  text-align: center;
+  display: inline-block;
+
+  margin-top: 40px;
+}
