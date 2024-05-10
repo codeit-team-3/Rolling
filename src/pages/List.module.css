@@ -1,26 +1,56 @@
-.List {
-  max-width: 1160px;
+.container {
+  width: 1160px;
   margin: 0px auto;
+
+  > a {
+    display: flex;
+    justify-content: center;
+    margin-top: 64px;
+  }
+
+  > a > button {
+    min-width: 240px;
+  }  
 }
 
+
+
 .wrapper {
-  margin-top: 30px;
+  margin-top: 50px;
 
   display: flex;
   gap: 10px;
   flex-direction: column;
-  justify-content: flex-start;
 }
 
 .header {
   font-size: 24px;
   font-weight: 700;
+  margin-bottom: 16px;
 }
 
-.button {
-  width: 100%;
-  text-align: center;
-  display: inline-block;
 
-  margin-top: 40px;
+
+
+@media screen and (max-width: 1279px) {
+  .container {
+    margin: 0px auto;
+    width: 768px;
+
+    > a, button {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  
+  .container {
+    margin: 0px auto;
+    width: 360px;
+
+    > a, button {
+      width: 100%;
+    }
+  }
 }

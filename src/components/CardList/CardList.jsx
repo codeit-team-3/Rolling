@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom"
 import ContributorsInfo from "../ContributorsInfo/ContributorsInfo"
 import BadgeEmoji from "../BadgeEmoji/BadgeEmoji"
 import styles from "./CardList.module.css"
@@ -14,6 +15,7 @@ const BACKGROUND_COLOR_IMAGE = {
 }
 
 const CardList = ({
+  id,
   backgroundColor,
   backgroundImageURL,
   name,
@@ -32,12 +34,19 @@ const CardList = ({
     },
   }
 
+const nav = useNavigate()
+
+const onClickHandler = () => {
+  nav(`/post/${id}`)
+}
+
   return (
     <div
       className={styles.cardList}
       style={
         backgroundImageURL ? BACKGROUND.image : BACKGROUND[backgroundColor]
       }
+      onClick={onClickHandler}
     >
       {backgroundImageURL ? (
         <div className={styles.overlay}></div>
