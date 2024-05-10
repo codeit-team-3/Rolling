@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   gap: 50px;
-  margin: 47px auto;
+  margin: 47px auto 147px auto;
   padding: 0 24px;
   max-width: 720px;
   min-width: 320px;
@@ -40,7 +40,13 @@
 
 .textEditor {
   height: 260px;
+
   > div > div {
     height: 70%;
+  }
+
+  p {
+    font-size: 14px;
+    letter-spacing: 2px;
   }
 }

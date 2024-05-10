@@ -15,20 +15,16 @@ const MESSAGE_INITIAL_MODEL = {
   profileImageURL: "",
   relationship: "지인",
   content: "",
-  font: "Noto Sans",
+  font: "Pretendard",
 }
 
 const RELATIONSHIP_OPTIONS = ["지인", "동료", "가족", "친구"]
 
-const FONT_OPTIONS = [
-  "Noto Sans",
-  "Pretendard",
-  "나눔명조",
-  "나눔손글씨 손편지",
-]
+const FONT_OPTIONS = ["Pretendard", "나눔명조", "Gaegu", "신디나루B"]
 
 const PostMessage = () => {
   const [messageData, setMessageData] = useState(MESSAGE_INITIAL_MODEL)
+  const [selectedFont, setSelectedFont] = useState("Pretendard")
   const [isFormValid, setIsFormValid] = useState(false)
   const { pathname } = useLocation()
   const navigate = useNavigate()
@@ -69,6 +65,17 @@ const PostMessage = () => {
     setIsFormValid(isValid)
   }, [messageData])
 
+  // font 변경
+  useEffect(() => {
+    const textEditor = document.getElementById("textEditor")
+    if (textEditor) {
+      const pElements = textEditor.querySelectorAll("p")
+      pElements.forEach((p) => {
+        p.style.fontFamily = selectedFont
+      })
+    }
+  }, [selectedFont])
+
   return (
     <form className={styles.form}>
       <div className={styles.formGroup}>
@@ -101,12 +108,16 @@ const PostMessage = () => {
           placeholder="지인"
         />
       </div>
-      <div className={clsx(styles.formGroup, styles.textEditor)}>
+      <div
+        className={clsx(styles.formGroup, styles.textEditor)}
+        id="textEditor"
+      >
         <label htmlFor="content">내용을 입력해주세요</label>
         <TextEditor
           onBlur={(value) => {
             handleChangeData("content", value)
           }}
+          style={{ fontFamily: selectedFont }}
         />
       </div>
       <div className={clsx(styles.formGroup, styles.dropdown)}>
@@ -114,9 +125,10 @@ const PostMessage = () => {
         <Dropdown
           options={FONT_OPTIONS}
           onSelect={(value) => {
+            setSelectedFont(value)
             handleChangeData("font", value)
           }}
-          placeholder="Noto Sans"
+          placeholder={selectedFont}
         />
       </div>
       <Button.Primary
