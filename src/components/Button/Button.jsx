@@ -1,7 +1,7 @@
-import ButtonBase from "../ButtonBase"
-import ButtonPrimary from "../ButtonPrimary"
-import ButtonSecondary from "../ButtonSecondary"
-import ButtonOutlined from "../ButtonOutlined"
+import ButtonBase from "./ButtonBase"
+import ButtonPrimary from "./ButtonPrimary"
+import ButtonSecondary from "./ButtonSecondary"
+import ButtonOutlined from "./ButtonOutlined"
 
 const Button = Object.assign(ButtonBase, {
   Primary: ButtonPrimary,
