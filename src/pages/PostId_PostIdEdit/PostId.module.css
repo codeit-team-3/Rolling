@@ -19,6 +19,10 @@
   }
 }
 
+.servie-header {
+  position: fixed;
+}
+
 .card-list-container {
   max-width: 1200px;
   margin: 114px auto;

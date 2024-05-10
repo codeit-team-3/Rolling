@@ -20,7 +20,7 @@ const Modal = ({ messageData }) => {
   const { profileImageURL, sender, relationship, createdAt, content, font } =
     messageData
   const formattedcreatedAt = formatDateString(createdAt)
-  const plainContent = stripHtml(content);
+  const plainContent = stripHtml(content)
 
   const handleClose = () => setIsVisible(false)
 
