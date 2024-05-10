@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "react-router-dom"
 import styles from "./HomePage.module.css"
+import Button from "../components/Button/Button"
 import Img_Frame from "../assets/img-banner_frame.svg"
 import Img_Emoji from "../assets/img-banner_emoji.png"
 
@@ -45,10 +46,9 @@ const HomePage = () => {
             </div>
           </div>
         </div>
-
-        <button className={styles.List_Button}>
-          <Link to="/list">구경해보기</Link>
-        </button>
+        <Link to="/list">
+          <Button.Primary size="56">구경해보기</Button.Primary>
+        </Link>
       </div>
     </>
   )
