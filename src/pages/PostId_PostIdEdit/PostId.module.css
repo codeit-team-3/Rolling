@@ -19,6 +19,10 @@
   }
 }
 
+.servie-header {
+  position: fixed;
+}
+
 .card-list-container {
   max-width: 1200px;
   margin: 114px auto;
@@ -68,7 +72,6 @@
   right: 0px;
 }
 
-
 @media (min-width: 375px) and (max-width: 1199px) {
   .delete-page-button {
     height: 55px;
@@ -78,8 +81,9 @@
     position: fixed;
     bottom: 24px;
     top: auto;
-    right:auto;
+    right: auto;
     left: auto;
+    z-index: 1;
   }
 }
 
@@ -90,7 +94,7 @@
   .card-list-container {
     max-width: 720px;
   }
-  .delete-page-button{
+  .delete-page-button {
     width: 720px;
   }
 }
@@ -101,7 +105,7 @@
   .card-list-container {
     max-width: 352px;
   }
-  .delete-page-button{
+  .delete-page-button {
     width: 352px;
   }
 }
