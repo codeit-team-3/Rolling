@@ -1,0 +1,20 @@
+.input-container {
+  width: 100%;
+  margin: 12px 0 50px;
+}
+
+.input-container Input {
+  width: 100%;
+}
+
+@media screen and (max-width: 1279px) {
+  .input-container {
+    margin-bottom: 54px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .input-container {
+    margin-bottom: 48px;
+  }
+}
