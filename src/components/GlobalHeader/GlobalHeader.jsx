@@ -14,8 +14,8 @@ const GlobalHeader = () => {
           <img src={logo} alt="Rolling" />
         </Link>
         {!pathname.includes("post") && (
-          <Button.Outlined size="40">
-            <Link to="/post"> 롤링 페이퍼 만들기</Link>
+          <Button.Outlined size="40" link="/post">
+            롤링 페이퍼 만들기
           </Button.Outlined>
         )}
       </div>
