@@ -37,11 +37,21 @@ body {
 
 /* 신디나루  */
 @font-face {
-  font-family: "신디나루B";
+  font-family: "신디나루";
   src:
     url("subset-KoreaSDNR-B.woff2") format("woff2"),
     url("subset-KoreaSDNR-B.woff") format("woff");
   font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "신디나루";
+  src:
+    url("subset-KoreaSDNR-M.woff2") format("woff2"),
+    url("subset-KoreaSDNR-M.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
   font-display: swap;
 }

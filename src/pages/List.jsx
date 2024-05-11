@@ -1,8 +1,8 @@
-import { useState, useEffect, useCallback, useRef } from "react"
+import { useState, useEffect } from "react"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules"
 import { Link } from "react-router-dom"
-// import "swiper/css"
+import "swiper/css"
 import "swiper/css/bundle"
 import "swiper/css/navigation"
 import "swiper/css/pagination"
@@ -67,7 +67,7 @@ const List = () => {
           </Swiper>
         </div>
       </section>
-      <secion className={styles.wrapper}>
+      <section className={styles.wrapper}>
         <div className={styles.header}>최근에 만든 롤링 페이퍼 ⭐️</div>
         <div className={`${styles.list} ${styles.bottom}`}>
           <Swiper
@@ -85,7 +85,8 @@ const List = () => {
             })}
           </Swiper>
         </div>
-      </secion>
+      </section>
+
       <Link to="/post">
         <ButtonPrimary>나도 만들어보기</ButtonPrimary>
       </Link>
