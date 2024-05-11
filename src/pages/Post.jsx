@@ -16,7 +16,6 @@ const Post = () => {
 
   const handleButtonClick = (button) => {
     setSelectedButton(button)
-    setUserName(false)
   }
 
   const handleOptionSelect = (option) => {
