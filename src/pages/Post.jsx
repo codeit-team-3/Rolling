@@ -1,11 +1,11 @@
 import React, { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import { request } from "../apis/api"
 import ToggleButton from "../components/ToggleButton/ToggleButton"
 import Option from "../components/Option/Option"
 import PostInput from "../components/PostInput/PostInput"
 import Button from "../components/Button/Button"
 import styles from "./Post.module.css"
-import { request } from "../apis/api"
 
 const Post = () => {
   const navigate = useNavigate()
