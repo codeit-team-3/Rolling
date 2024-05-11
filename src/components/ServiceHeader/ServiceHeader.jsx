@@ -5,6 +5,7 @@ import ReactionSection from "./ReactionSection"
 import Toast from "../Toast/Toast"
 import useWindowSize from "../../hooks/useWindowSize"
 import styles from "./ServiceHeader.module.css"
+const { Kakao } = window
 
 const onCopyAddress = async () => {
   const currentURL = window.location.href
@@ -59,6 +60,28 @@ const ServiceHeader = ({ recipient }) => {
     }
   }, [showToast])
 
+  // 카카오
+
+  useEffect(() => {
+    if (!Kakao.isInitialized()) {
+      Kakao.init(import.meta.env.VITE_KAKAO_SHARE_JS_KEY)
+    }
+  }, [])
+
+  const kakaoShare = async () => {
+    try {
+      Kakao.Share.sendCustom({
+        templateId: import.meta.env.VITE_KAKAO_SHARE_TEMPLATE_KEY,
+        templateArgs: {
+          title: "즐거운 롤링페이퍼 서비스, Rolling",
+          description: "지금 바로 Rolling에서 친구들과 속마음을 나눠보세요!",
+        },
+      })
+    } catch (error) {
+      console.dir(error)
+    }
+  }
+
   return (
     <div className={styles.header}>
       <div className={styles.headerInner}>
@@ -94,7 +117,7 @@ const ServiceHeader = ({ recipient }) => {
             />
             {showDropdown && (
               <div className={styles.dropdownList}>
-                <button>카카오톡 공유</button>
+                <button onClick={kakaoShare}>카카오톡 공유</button>
                 <button onClick={handleClickUrlShare}>URL 공유</button>
               </div>
             )}
