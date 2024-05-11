@@ -20,7 +20,7 @@ const MESSAGE_INITIAL_MODEL = {
 
 const RELATIONSHIP_OPTIONS = ["지인", "동료", "가족", "친구"]
 
-const FONT_OPTIONS = ["Pretendard", "나눔명조", "Gaegu", "신디나루B"]
+const FONT_OPTIONS = ["Pretendard", "나눔명조", "Gaegu", "신디나루"]
 
 const PostMessage = () => {
   const [messageData, setMessageData] = useState(MESSAGE_INITIAL_MODEL)
@@ -65,17 +65,6 @@ const PostMessage = () => {
     setIsFormValid(isValid)
   }, [messageData])
 
-  // font 변경
-  useEffect(() => {
-    const textEditor = document.getElementById("textEditor")
-    if (textEditor) {
-      const pElements = textEditor.querySelectorAll("p")
-      pElements.forEach((p) => {
-        p.style.fontFamily = selectedFont
-      })
-    }
-  }, [selectedFont])
-
   return (
     <form className={styles.form}>
       <div className={styles.formGroup}>
@@ -117,7 +106,7 @@ const PostMessage = () => {
           onBlur={(value) => {
             handleChangeData("content", value)
           }}
-          style={{ fontFamily: selectedFont }}
+          selectedFont={selectedFont}
         />
       </div>
       <div className={clsx(styles.formGroup, styles.dropdown)}>

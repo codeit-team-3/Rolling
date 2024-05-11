@@ -2,6 +2,7 @@ import Badge from "../Badge/Badge"
 import ProfileImage from "../ProfileImage/ProfileImage"
 import ButtonOutlined from "../Button/ButtonOutlined"
 import { formatDateString } from "../../utils/formatDateString"
+import { stripHtml } from "../../utils/stripHtml"
 import styles from "./Card.module.css"
 
 const Card = ({ messageData, isEditable, onDeleteButton, onClickCard }) => {
@@ -30,6 +31,7 @@ const Card = ({ messageData, isEditable, onDeleteButton, onClickCard }) => {
   } = messageData
 
   const formattedcreatedAt = formatDateString(createdAt)
+  const plainContent = stripHtml(content)
 
   return (
     <div
@@ -59,7 +61,7 @@ const Card = ({ messageData, isEditable, onDeleteButton, onClickCard }) => {
         )}
       </div>
       <div className={styles["message-container"]}>
-        <div className={styles["message-content"]}>{content}</div>
+        <div className={styles["message-content"]}>{plainContent}</div>
       </div>
       <span className={styles["created-at"]}>{formattedcreatedAt}</span>
     </div>

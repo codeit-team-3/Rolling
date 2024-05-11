@@ -1,4 +1,7 @@
 .outlinedButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 6px;
   border: 1px solid var(--gray-300);
   background-color: var(--white);
@@ -42,7 +45,7 @@
   &.iconButton {
     gap: 10px;
     width: auto;
-    padding: 9px 16px;
+    padding: 9px;
   }
 }
 
@@ -57,7 +60,7 @@
   &.iconButton {
     gap: 4px;
     width: auto;
-    padding: 6px 16px;
+    padding: 9px;
   }
 }
 

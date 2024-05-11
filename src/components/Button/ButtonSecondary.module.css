@@ -1,4 +1,7 @@
 .btn-secondary-40 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 122px;
   height: 40px;
   border-radius: 6px;

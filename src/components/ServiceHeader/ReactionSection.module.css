@@ -38,7 +38,13 @@
   border-radius: 8px;
   background-color: var(--white);
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-  overflow-y: auto;
+  overflow-y: hidden;
+  z-index: 2;
+
+  @media (max-width: 768px) {
+    width: 236px;
+    height: 138px;
+  }
 
   .allEmojis {
     display: flex;
@@ -51,8 +57,6 @@
     margin-bottom: 10px;
 
     > button {
-      /* margin-right: 8px; */
-      /* margin-bottom: 10px; */
       background-color: transparent;
       cursor: pointer;
     }
@@ -89,12 +93,10 @@
     position: absolute;
     top: 56px;
     right: 0;
-  }
+    z-index: 100;
 
-  @media (min-width: 768px) {
-    > button {
-      /* width: 36px;
-      height: 32px; */
+    @media (max-width: 768px) {
+      max-width: 286px;
     }
   }
 }

@@ -3,6 +3,7 @@ import Badge from "../Badge/Badge"
 import ButtonPrimary from "../Button/ButtonPrimary"
 import ProfileImage from "../ProfileImage/ProfileImage"
 import { formatDateString } from "../../utils/formatDateString"
+import { stripHtml } from "../../utils/stripHtml"
 import styles from "./Modal.module.css"
 
 const Modal = ({ messageData }) => {
@@ -19,6 +20,7 @@ const Modal = ({ messageData }) => {
   const { profileImageURL, sender, relationship, createdAt, content, font } =
     messageData
   const formattedcreatedAt = formatDateString(createdAt)
+  const plainContent = stripHtml(content)
 
   const handleClose = () => setIsVisible(false)
 
@@ -40,7 +42,7 @@ const Modal = ({ messageData }) => {
         <span className={styles["created-at"]}>{formattedcreatedAt}</span>
       </div>
       <div className={styles["message-container"]}>
-        <div className={styles["message-content"]}>{content}</div>
+        <div className={styles["message-content"]}>{plainContent}</div>
       </div>
       <ButtonPrimary onClick={handleClose} type="button" size="40">
         확인

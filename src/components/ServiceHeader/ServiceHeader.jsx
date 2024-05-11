@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useRef } from "react"
 import Button from "../Button/Button"
 import ContributorsInfo from "../ContributorsInfo/ContributorsInfo"
 import ReactionSection from "./ReactionSection"
 import Toast from "../Toast/Toast"
 import useWindowSize from "../../hooks/useWindowSize"
 import styles from "./ServiceHeader.module.css"
+const { Kakao } = window
 
 const onCopyAddress = async () => {
   const currentURL = window.location.href
@@ -19,6 +20,7 @@ const ServiceHeader = ({ recipient }) => {
   const [screenSize, setScreenSize] = useState("medium")
   const [showDropdown, setShowDropdown] = useState(false)
   const [showToast, setShowToast] = useState(false)
+  const dropdownRef = useRef()
   const { width } = useWindowSize()
 
   useEffect(() => {
@@ -35,6 +37,49 @@ const ServiceHeader = ({ recipient }) => {
     onCopyAddress()
     setShowDropdown(false)
     setShowToast(true)
+  }
+
+  useEffect(() => {
+    const handleOutsideClose = (e) => {
+      if (showDropdown && !dropdownRef.current.contains(e.target))
+        setShowDropdown(false)
+    }
+
+    document.addEventListener("click", handleOutsideClose)
+
+    return () => document.removeEventListener("click", handleOutsideClose)
+  }, [showDropdown])
+
+  useEffect(() => {
+    if (showToast) {
+      const timer = setTimeout(() => {
+        setShowToast((prevState) => !prevState)
+      }, 3000)
+
+      return () => clearTimeout(timer)
+    }
+  }, [showToast])
+
+  // 카카오
+
+  useEffect(() => {
+    if (!Kakao.isInitialized()) {
+      Kakao.init(import.meta.env.VITE_KAKAO_SHARE_JS_KEY)
+    }
+  }, [])
+
+  const kakaoShare = async () => {
+    try {
+      Kakao.Share.sendCustom({
+        templateId: import.meta.env.VITE_KAKAO_SHARE_TEMPLATE_KEY,
+        templateArgs: {
+          title: "즐거운 롤링페이퍼 서비스, Rolling",
+          description: "지금 바로 Rolling에서 친구들과 속마음을 나눠보세요!",
+        },
+      })
+    } catch (error) {
+      console.dir(error)
+    }
   }
 
   return (
@@ -64,7 +109,7 @@ const ServiceHeader = ({ recipient }) => {
 
           <div className={styles.line} />
 
-          <div className={styles.shareSection}>
+          <div className={styles.shareSection} ref={dropdownRef}>
             <Button.Outlined
               icon="share"
               size="36"
@@ -72,7 +117,7 @@ const ServiceHeader = ({ recipient }) => {
             />
             {showDropdown && (
               <div className={styles.dropdownList}>
-                <button>카카오톡 공유</button>
+                <button onClick={kakaoShare}>카카오톡 공유</button>
                 <button onClick={handleClickUrlShare}>URL 공유</button>
               </div>
             )}

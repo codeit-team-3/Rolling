@@ -60,6 +60,7 @@
 
   > button {
     width: 56px;
+    height: 36px;
   }
 
   .dropdownList {
@@ -70,6 +71,8 @@
     border-radius: 8px;
     background-color: var(--white);
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    z-index: 100;
+    overflow: hidden;
 
     > button {
       width: 130px;
@@ -82,12 +85,7 @@
       }
     }
 
-    > button:first-of-type {
-      border-radius: 8px 8px 0 0;
-    }
-
     > button:last-or-type {
-      border-radius: 0 0 8px 8px;
       border-bottom: none;
     }
   }
