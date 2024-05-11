@@ -70,12 +70,27 @@ const ServiceHeader = ({ recipient }) => {
 
   const kakaoShare = async () => {
     try {
-      Kakao.Share.sendCustom({
-        templateId: import.meta.env.VITE_KAKAO_SHARE_TEMPLATE_KEY,
-        templateArgs: {
-          title: "즐거운 롤링페이퍼 서비스, Rolling",
+      Kakao.Share.sendDefault({
+        objectType: "feed",
+        content: {
+          title: `${name}에게 메세지를 남겨주세요!`,
           description: "지금 바로 Rolling에서 친구들과 속마음을 나눠보세요!",
+          imageUrl: "https://ifh.cc/g/FJpk58.jpg",
+          link: {
+            mobileWebUrl: `${import.meta.env.VITE_URL}/post/${id}`,
+            webUrl: `${import.meta.env.VITE_URL}/post/${id}`,
+          },
         },
+        buttons: [
+          {
+            title: "이동 하기",
+            link: {
+              mobileWebUrl: `${import.meta.env.VITE_URL}/post/${id}`,
+              webUrl: `${import.meta.env.VITE_URL}/post/${id}`,
+            },
+          },
+        ],
+        installTalk: true,
       })
     } catch (error) {
       console.dir(error)
