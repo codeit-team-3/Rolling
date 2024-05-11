@@ -1,3 +1,4 @@
 export function stripHtml(html) {
-  return html.replace(/<[^>]*>?/gm, "")
+  const newText = html.replace(/<\/p>/gi, '\n').replace(/<p>/gi, '').replace(/<[^>]*>/g, '');
+  return newText;
 }

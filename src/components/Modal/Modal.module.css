@@ -82,6 +82,8 @@
   line-height: 28px;
   letter-spacing: -0.01em;
   color: var(--gray-500);
+
+  white-space: pre-wrap;
 }
 
 .button-container {
