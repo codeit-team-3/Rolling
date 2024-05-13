@@ -31,10 +31,10 @@
   height: 56px;
   text-align: left;
   display: flex;
-  justify-content: space-between;
   margin: 28px auto 16px 24px;
 }
 .sender-info-container2 {
+  margin-left: 14px;
   width: 150px;
   height: 100%;
   display: flex;
@@ -95,6 +95,7 @@
 
 .delete-button {
   margin-right: 24px;
+  margin-left: 10px;
 }
 
 @media (max-width: 1199px) {
@@ -108,5 +109,22 @@
   .card {
     max-width: 320px;
     height: 230px;
+  }
+  .message-container {
+    height: 60px;
+  }
+  .message-content {
+    height: 50px;
+    font-size: var(--font-size15);
+  }
+  .sender {
+    font-size: var(--font-size16);
+    font-family: var(--font-family-Regular);
+  }
+  .sender span {
+    font-family: var(--font-family-Regular);
+  }
+  .sender-info-container2 {
+    width: 130px;
   }
 }
