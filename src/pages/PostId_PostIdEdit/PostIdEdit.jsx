@@ -2,7 +2,6 @@ import React, { useCallback, useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import ServiceHeader from "../../components/ServiceHeader/ServiceHeader"
 import Card from "../../components/Card/Card"
-import ButtonPrimary from "../../components/Button/ButtonPrimary"
 import useRequest from "../../hooks/useRequest"
 import styles from "./PostId.module.css"
 
@@ -123,16 +122,6 @@ const PostIdEdit = () => {
         >
           페이지 삭제하기
         </button>
-        {/* <div className={styles["button-container"]}>
-          <ButtonPrimary
-            className={styles["delete-page-button-1"]}
-            onClick={() => handleDeletePage(recipient.id)}
-            size="40"
-            style={{ width: '200px' }}
-          >
-            삭제하기
-          </ButtonPrimary>
-        </div> */}
         <ul className={styles["card-list"]}>
           {messages.map((message) => (
             <li key={message.id}>
