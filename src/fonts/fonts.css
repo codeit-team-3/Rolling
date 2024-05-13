@@ -35,58 +35,6 @@ body {
   font-display: swap;
 }
 
-/* 신디나루  */
-@font-face {
-  font-family: "신디나루";
-  src:
-    url("subset-KoreaSDNR-B.woff2") format("woff2"),
-    url("subset-KoreaSDNR-B.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "신디나루";
-  src:
-    url("subset-KoreaSDNR-M.woff2") format("woff2"),
-    url("subset-KoreaSDNR-M.woff") format("woff");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* 개구 */
-@font-face {
-  font-family: "Gaegu";
-  src:
-    url("subset-Gaegu-Bold.woff2") format("woff2"),
-    url("subset-Gaegu-Bold.woff") format("woff");
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Gaegu";
-  src:
-    url("subset-Gaegu-Regular.woff2") format("woff2"),
-    url("subset-Gaegu-Regular.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Gaegu";
-  src:
-    url("subset-Gaegu-Light.woff2") format("woff2"),
-    url("subset-Gaegu-Light.woff") format("woff");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
 /* 나눔명조 */
 @font-face {
   font-family: "나눔명조";
@@ -104,6 +52,50 @@ body {
     url("subset-NanumMyeongjo.woff2") format("woff2"),
     url("subset-NanumMyeongjo.woff") format("woff");
   font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/*  나눔손글씨 손편지체 */
+
+@font-face {
+  font-family: "Nanum Pen";
+  src:
+    url("subset-NanumPen.woff2") format("woff2"),
+    url("subset-NanumPen.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/*  Noto Sans  */
+
+@font-face {
+  font-family: "Noto Sans";
+  src:
+    url("subset-NotoSansKR-Regular.woff2") format("woff2"),
+    url("subset-NotoSansKR-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Noto Sans";
+  src:
+    url("subset-NotoSansKR-Medium.woff2") format("woff2"),
+    url("subset-NotoSansKR-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Noto Sans";
+  src:
+    url("subset-NotoSansKR-Bold.woff2") format("woff2"),
+    url("subset-NotoSansKR-Bold.woff") format("woff");
+  font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
