@@ -55,6 +55,14 @@
   }
 }
 
+.onlyOneContributor {
+  > div {
+    > div {
+      transform: translateX(-50%);
+    }
+  }
+}
+
 .shareSection {
   position: relative;
 
