@@ -1,15 +1,18 @@
 import React from "react"
+
 import ProfileImage from "../ProfileImage/ProfileImage"
 import styles from "./ContributorsInfo.module.css"
 
 const ContributorsInfo = ({ recentMessages, messageCount }) => {
+  const MAX_DISPLAYED_CONTRIBUTORS = 3
+
   return (
     <>
       <div className={styles.profileImgBox}>
         {recentMessages.map(({ id, profileImageURL }) => (
           <ProfileImage key={id} src={profileImageURL} />
         ))}
-        {messageCount > 3 && (
+        {messageCount > MAX_DISPLAYED_CONTRIBUTORS && (
           <div className={styles.otherContributor}>+{messageCount - 3}</div>
         )}
       </div>

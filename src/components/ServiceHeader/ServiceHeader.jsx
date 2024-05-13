@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react"
+import clsx from "clsx"
 import Button from "../Button/Button"
 import ContributorsInfo from "../ContributorsInfo/ContributorsInfo"
 import ReactionSection from "./ReactionSection"
@@ -89,7 +90,12 @@ const ServiceHeader = ({ recipient }) => {
         <div className={styles.contents}>
           {screenSize === "medium" && (
             <>
-              <div className={styles.contributorsInfo}>
+              <div
+                className={clsx(styles.contributorsInfo, {
+                  [styles.onlyOneContributor]: messageCount === 1,
+                })}
+              >
+                {/* <div className={styles.contributorsInfo}> */}
                 <ContributorsInfo
                   recentMessages={recentMessages}
                   messageCount={messageCount}
