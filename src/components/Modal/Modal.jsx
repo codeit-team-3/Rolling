@@ -29,17 +29,14 @@ const Modal = ({ messageData, onClose }) => {
   const formattedcreatedAt = formatDateString(createdAt)
   const plainContent = stripHtml(content)
 
-  // const handleClose = () => setIsVisible(false)
-
-  // 이벤트 전파를 막는 핸들러
   const handleModalClick = (event) => {
-    event.stopPropagation(); // 모달 내부 클릭시 이벤트 전파 중지
-  };
+    event.stopPropagation()
+  }
 
   const handleClose = () => {
-    setIsVisible(false);
-    onClose(); // 부모 컴포넌트의 닫기 처리 함수 호출
-  };
+    setIsVisible(false)
+    onClose()
+  }
 
   return (
     <div className={styles.modal} onClick={handleModalClick}>
