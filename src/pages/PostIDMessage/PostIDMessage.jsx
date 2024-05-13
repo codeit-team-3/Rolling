@@ -44,7 +44,7 @@ const PostMessage = () => {
       data: messageData,
     })
 
-    if (error) console.log("메세지를 생성하는데 실패했습니다", error)
+    if (error) alert("메세지를 생성하는데 실패했습니다", error)
   }
 
   const handleChangeData = useCallback((key, value) => {
