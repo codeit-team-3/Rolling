@@ -64,6 +64,12 @@
   right: 24px;
 }
 
+.back-button-container {
+  position: absolute;
+  top: -58px;
+  left: 24px;
+}
+
 .delete-page-button {
   width: 120px;
   height: 39px;
