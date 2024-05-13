@@ -18,11 +18,6 @@
     background-color: var(--green-200);
   }
 }
-
-.servie-header {
-  position: fixed;
-}
-
 .card-list-container {
   max-width: 1200px;
   margin: 114px auto;
@@ -79,7 +74,7 @@
   font-size: var(--font-size16);
   position: absolute;
   top: -58px;
-  right: 24px;
+  right: -18px;
 
   &:active:not(:disabled) {
     background-color: #9747ff;
