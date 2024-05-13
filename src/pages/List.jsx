@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules"
 import { Link } from "react-router-dom"
-import "swiper/css"
+// import "swiper/css"
 import "swiper/css/bundle"
 import "swiper/css/navigation"
 import "swiper/css/pagination"
@@ -11,6 +11,8 @@ import styles from "./List.module.css"
 import useRequest from "../hooks/useRequest"
 import CardList from "../components/CardList/CardList"
 import ButtonPrimary from "../components/Button/ButtonPrimary"
+// import arrowRight from '../assets/arrowRight.png'
+// import arrowLeft from '../assets/arrowLeft.png'
 
 const RECIPIENTS_LIMIT = 100
 
@@ -53,9 +55,20 @@ const List = () => {
         <div className={styles.list}>
           <Swiper
             modules={[Navigation, Pagination, Scrollbar, A11y]}
-            spaceBetween={10}
-            slidesPerView={"auto"}
-            navigation
+            spaceBetween={30}
+            navigation={{}}
+            grabCursor={true}
+            breakpoints={{
+              0: {
+                slidesPerView: 1.3,
+              },
+              768: {
+                slidesPerView: 2.7,
+              },
+              1279: {
+                slidesPerView: 4,
+              },
+            }}
           >
             {dataPopular.map((item) => {
               return (
@@ -72,9 +85,20 @@ const List = () => {
         <div className={`${styles.list} ${styles.bottom}`}>
           <Swiper
             modules={[Navigation, Pagination, Scrollbar, A11y]}
-            spaceBetween={10}
-            slidesPerView={"auto"}
-            navigation
+            spaceBetween={30}
+            navigation={{}}
+            grabCursor={true}
+            breakpoints={{
+              0: {
+                slidesPerView: 1.3,
+              },
+              768: {
+                slidesPerView: 2.7,
+              },
+              1279: {
+                slidesPerView: 4,
+              },
+            }}
           >
             {dataRecent.map((item) => {
               return (
