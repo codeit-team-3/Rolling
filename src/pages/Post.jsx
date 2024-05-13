@@ -39,7 +39,6 @@ const Post = () => {
         url: "/recipients/",
         data: postData,
       })
-      console.log("포스트 생성 성공:", response)
 
       navigate(`/post/${response.data.id}`)
     } catch (error) {
