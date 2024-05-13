@@ -6,11 +6,11 @@ import { stripHtml } from "../../utils/stripHtml"
 import styles from "./Card.module.css"
 
 const fontStyles = {
-  "Pretendard": { fontFamily: "Pretendard" },
-  "나눔명조": { fontFamily: "나눔명조" },
+  Pretendard: { fontFamily: "Pretendard" },
+  나눔명조: { fontFamily: "나눔명조" },
   // "Gaegu": { fontFamily: "Gaegu" },
   // "신디나루": { fontFamily: "신디나루" }
-};
+}
 
 const Card = ({ messageData, isEditable, onDeleteButton, onClickCard }) => {
   if (!messageData) {
@@ -68,7 +68,12 @@ const Card = ({ messageData, isEditable, onDeleteButton, onClickCard }) => {
         )}
       </div>
       <div className={styles["message-container"]}>
-        <div className={styles["message-content"]} style={fontStyles[messageData.font]}>{plainContent}</div>
+        <div
+          className={styles["message-content"]}
+          style={fontStyles[messageData.font]}
+        >
+          {plainContent}
+        </div>
       </div>
       <span className={styles["created-at"]}>{formattedcreatedAt}</span>
     </div>
