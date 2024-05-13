@@ -28,6 +28,10 @@
   margin: 114px auto;
   padding-bottom: 246px;
   position: relative;
+
+  padding-left: 24px;
+  padding-right: 24px;
+  box-sizing: border-box;
 }
 
 .card-list {
@@ -57,7 +61,7 @@
 .button-container {
   position: absolute;
   top: -58px;
-  right: 0px;
+  right: 24px;
 }
 
 .delete-page-button {
@@ -69,10 +73,33 @@
   font-size: var(--font-size16);
   position: absolute;
   top: -58px;
-  right: 0px;
+  right: 24px;
+
+  &:active:not(:disabled) {
+    background-color: #9747ff;
+  }
+
+  &:disabled {
+    background-color: var(--gray-300);
+  }
+
+  &:hover:not(:disabled) {
+    background-color: var(--purple-700);
+  }
+
+  &:active:not(:disabled),
+  &:focus:not(:disabled) {
+    background-color: var(--purple-800);
+  }
 }
 
-@media (min-width: 375px) and (max-width: 1199px) {
+@media (min-width: 1200px) and (max-width: 1248px) {
+  .card-list-container {
+    max-width: calc(100% - 48px);
+  }
+}
+
+@media (max-width: 1199px) {
   .delete-page-button {
     height: 55px;
     border-radius: 12px;
@@ -85,20 +112,19 @@
     left: auto;
     z-index: 1;
   }
-}
-
-@media (min-width: 768px) and (max-width: 1199px) {
   .card-list {
     grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
   }
   .card-list-container {
-    max-width: 720px;
+    max-width: 768px;
   }
   .delete-page-button {
     width: 720px;
   }
 }
-@media (min-width: 375px) and (max-width: 767px) {
+
+@media (max-width: 767px) {
   .card-list {
     grid-template-columns: repeat(1, 1fr);
   }
@@ -106,6 +132,6 @@
     max-width: 352px;
   }
   .delete-page-button {
-    width: 352px;
+    width: 320px;
   }
 }

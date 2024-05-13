@@ -82,8 +82,33 @@
   line-height: 28px;
   letter-spacing: -0.01em;
   color: var(--gray-500);
+
+  white-space: pre-wrap;
 }
 
 .button-container {
   width: 100%;
+}
+
+@media (max-width: 767px) {
+  .modal {
+    max-width: 320px;
+    height: 320px;
+  }
+  .sender-info-container1 {
+    margin-left: 25px;
+  }
+  .sender-info-container2 {
+    margin-left: 5px;
+  }
+  .message-container {
+    max-width: 280px;
+    height: 120px;
+  }
+
+  .message-content {
+    max-width: 280px;
+    height: 120px;
+    padding-left: 20px;
+  }
 }
