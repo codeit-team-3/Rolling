@@ -74,7 +74,7 @@
   font-size: var(--font-size16);
   position: absolute;
   top: -58px;
-  right: -18px;
+  right: 24px;
 
   &:active:not(:disabled) {
     background-color: #9747ff;
