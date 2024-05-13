@@ -2,7 +2,6 @@ import { useState, useEffect } from "react"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules"
 import { Link } from "react-router-dom"
-// import "swiper/css"
 import "swiper/css/bundle"
 import "swiper/css/navigation"
 import "swiper/css/pagination"
@@ -11,8 +10,6 @@ import styles from "./List.module.css"
 import useRequest from "../hooks/useRequest"
 import CardList from "../components/CardList/CardList"
 import ButtonPrimary from "../components/Button/ButtonPrimary"
-// import arrowRight from '../assets/arrowRight.png'
-// import arrowLeft from '../assets/arrowLeft.png'
 
 const RECIPIENTS_LIMIT = 100
 
