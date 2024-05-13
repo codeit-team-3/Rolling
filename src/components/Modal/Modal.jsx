@@ -7,11 +7,11 @@ import { stripHtml } from "../../utils/stripHtml"
 import styles from "./Modal.module.css"
 
 const fontStyles = {
-  "Pretendard": { fontFamily: "Pretendard" },
-  "나눔명조": { fontFamily: "나눔명조" },
+  Pretendard: { fontFamily: "Pretendard" },
+  나눔명조: { fontFamily: "나눔명조" },
   // "Gaegu": { fontFamily: "Gaegu" },
   // "신디나루": { fontFamily: "신디나루" }
-};
+}
 
 const Modal = ({ messageData }) => {
   const [isVisible, setIsVisible] = useState(true)
@@ -49,7 +49,12 @@ const Modal = ({ messageData }) => {
         <span className={styles["created-at"]}>{formattedcreatedAt}</span>
       </div>
       <div className={styles["message-container"]}>
-        <div className={styles["message-content"]} style={fontStyles[messageData.font]}>{plainContent}</div>
+        <div
+          className={styles["message-content"]}
+          style={fontStyles[messageData.font]}
+        >
+          {plainContent}
+        </div>
       </div>
       <ButtonPrimary onClick={handleClose} type="button" size="40">
         확인

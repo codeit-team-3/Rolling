@@ -48,7 +48,6 @@ const List = () => {
     getRecipientsRecent()
   }, [])
 
-
   return (
     <div className={styles.container}>
       <section className={styles.wrapper}>
@@ -57,8 +56,7 @@ const List = () => {
           <Swiper
             modules={[Navigation, Pagination, Scrollbar, A11y]}
             spaceBetween={30}
-            navigation={{
-            }}
+            navigation={{}}
             grabCursor={true}
             breakpoints={{
               0: {
@@ -66,11 +64,10 @@ const List = () => {
               },
               768: {
                 slidesPerView: 2.7,
-
               },
               1279: {
                 slidesPerView: 4,
-              }
+              },
             }}
           >
             {dataPopular.map((item) => {
@@ -89,8 +86,7 @@ const List = () => {
           <Swiper
             modules={[Navigation, Pagination, Scrollbar, A11y]}
             spaceBetween={30}
-            navigation={{
-            }}
+            navigation={{}}
             grabCursor={true}
             breakpoints={{
               0: {
@@ -98,11 +94,10 @@ const List = () => {
               },
               768: {
                 slidesPerView: 2.7,
-
               },
               1279: {
                 slidesPerView: 4,
-              }
+              },
             }}
           >
             {dataRecent.map((item) => {
