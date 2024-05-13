@@ -1,7 +1,9 @@
-import { useState, useEffect, useCallback, useRef } from "react"
+import { useState, useEffect } from "react"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules"
+import { Link } from "react-router-dom"
 import "swiper/css"
+import "swiper/css/bundle"
 import "swiper/css/navigation"
 import "swiper/css/pagination"
 import "swiper/css/scrollbar"
@@ -45,14 +47,14 @@ const List = () => {
   }, [])
 
   return (
-    <div className={styles.List}>
+    <div className={styles.container}>
       <section className={styles.wrapper}>
         <div className={styles.header}>인기 롤링 페이퍼 🔥</div>
         <div className={styles.list}>
           <Swiper
             modules={[Navigation, Pagination, Scrollbar, A11y]}
-            spaceBetween={50}
-            slidesPerView={4}
+            spaceBetween={10}
+            slidesPerView={"auto"}
             navigation
           >
             {dataPopular.map((item) => {
@@ -65,13 +67,13 @@ const List = () => {
           </Swiper>
         </div>
       </section>
-      <secion className={styles.wrapper}>
+      <section className={styles.wrapper}>
         <div className={styles.header}>최근에 만든 롤링 페이퍼 ⭐️</div>
-        <div className={styles.list}>
+        <div className={`${styles.list} ${styles.bottom}`}>
           <Swiper
             modules={[Navigation, Pagination, Scrollbar, A11y]}
-            spaceBetween={50}
-            slidesPerView={4}
+            spaceBetween={10}
+            slidesPerView={"auto"}
             navigation
           >
             {dataRecent.map((item) => {
@@ -83,10 +85,11 @@ const List = () => {
             })}
           </Swiper>
         </div>
-      </secion>
-      <secion className={styles.button}>
-        <ButtonPrimary link="/post">나도 만들어보기</ButtonPrimary>
-      </secion>
+      </section>
+
+      <Link to="/post">
+        <ButtonPrimary>나도 만들어보기</ButtonPrimary>
+      </Link>
     </div>
   )
 }

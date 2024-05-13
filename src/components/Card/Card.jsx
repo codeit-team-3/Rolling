@@ -5,6 +5,13 @@ import { formatDateString } from "../../utils/formatDateString"
 import { stripHtml } from "../../utils/stripHtml"
 import styles from "./Card.module.css"
 
+const fontStyles = {
+  "Pretendard": { fontFamily: "Pretendard" },
+  "나눔명조": { fontFamily: "나눔명조" },
+  // "Gaegu": { fontFamily: "Gaegu" },
+  // "신디나루": { fontFamily: "신디나루" }
+};
+
 const Card = ({ messageData, isEditable, onDeleteButton, onClickCard }) => {
   if (!messageData) {
     return <div className={`${styles.card} ${styles.loading}`}>Loading...</div>
@@ -61,7 +68,7 @@ const Card = ({ messageData, isEditable, onDeleteButton, onClickCard }) => {
         )}
       </div>
       <div className={styles["message-container"]}>
-        <div className={styles["message-content"]}>{plainContent}</div>
+        <div className={styles["message-content"]} style={fontStyles[messageData.font]}>{plainContent}</div>
       </div>
       <span className={styles["created-at"]}>{formattedcreatedAt}</span>
     </div>

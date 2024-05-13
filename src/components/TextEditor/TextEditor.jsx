@@ -3,7 +3,14 @@ import ReactQuill from "react-quill"
 import "react-quill/dist/quill.snow.css" // Quill의 스타일을 import합니다.
 import styles from "./TextEditor.module.css"
 
-const Editor = ({ onBlur }) => {
+const fontStyle = {
+  Pretendard: "fontStyle__Pretendard",
+  나눔명조: "fontStyle__NanumMyungjo",
+  Gaegu: "fontStyle__Gaegu",
+  신디나루: "fontStyle__SindiNaru",
+}
+
+const Editor = ({ onBlur, selectedFont }) => {
   const [value, setValue] = useState("")
 
   const handleBlurEditor = () => {
@@ -30,6 +37,7 @@ const Editor = ({ onBlur }) => {
         value={value}
         onChange={setValue}
         onBlur={handleBlurEditor}
+        className={styles[fontStyle[selectedFont]]}
       />
     </div>
   )

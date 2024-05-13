@@ -6,12 +6,19 @@ import { formatDateString } from "../../utils/formatDateString"
 import { stripHtml } from "../../utils/stripHtml"
 import styles from "./Modal.module.css"
 
+const fontStyles = {
+  "Pretendard": { fontFamily: "Pretendard" },
+  "나눔명조": { fontFamily: "나눔명조" },
+  // "Gaegu": { fontFamily: "Gaegu" },
+  // "신디나루": { fontFamily: "신디나루" }
+};
+
 const Modal = ({ messageData }) => {
+  const [isVisible, setIsVisible] = useState(true)
+
   if (!messageData) {
     return <div className={`${styles.modal} ${styles.loading}`}>Loading...</div>
   }
-
-  const [isVisible, setIsVisible] = useState(true)
 
   if (!isVisible) {
     return null
@@ -42,14 +49,11 @@ const Modal = ({ messageData }) => {
         <span className={styles["created-at"]}>{formattedcreatedAt}</span>
       </div>
       <div className={styles["message-container"]}>
-        <div className={styles["message-content"]}>{plainContent}</div>
+        <div className={styles["message-content"]} style={fontStyles[messageData.font]}>{plainContent}</div>
       </div>
-      <ButtonPrimary
-        onClick={handleClose}
-        children="확인"
-        type="button"
-        size="40"
-      />
+      <ButtonPrimary onClick={handleClose} type="button" size="40">
+        확인
+      </ButtonPrimary>
     </div>
   )
 }
