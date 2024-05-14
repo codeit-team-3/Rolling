@@ -70,7 +70,9 @@
   .post-create Button {
     margin-top: 58px;
   }
+}
 
+@media screen and (max-width: 378px) {
   .option-container {
     width: 378px;
   }
