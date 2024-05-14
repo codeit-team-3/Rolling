@@ -113,9 +113,11 @@ const ReactionSection = ({ id, screenSize }) => {
             </button>
           ))}
 
-          <button onClick={toggleShowAllEmojis}>
-            <i className="ic-arrow_down"></i>
-          </button>
+          {reactions.count > 0 && (
+            <button onClick={toggleShowAllEmojis}>
+              <i className="ic-arrow_down"></i>
+            </button>
+          )}
 
           {showAllEmojis && (
             <div className={styles.allEmojisWrapper}>
