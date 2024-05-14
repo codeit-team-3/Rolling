@@ -30,7 +30,6 @@ const CardList = ({
     blue: { backgroundColor: "#b1e4ff" },
     image: {
       color: "var(--white)",
-      backgroundImage: `url(${backgroundImageURL})`,
     },
   }
 
@@ -49,11 +48,18 @@ const CardList = ({
       onClick={onClickHandler}
     >
       {backgroundImageURL ? (
-        <div className={styles.overlay}></div>
+        <>
+          <div className={styles.overlay}></div>
+          <img
+            className={styles.backgroundImage}
+            src={backgroundImageURL}
+          ></img>
+        </>
       ) : (
         <img
           className={styles.colorImage}
           src={BACKGROUND_COLOR_IMAGE[backgroundColor]}
+          alt="배경이미지"
         ></img>
       )}
 

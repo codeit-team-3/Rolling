@@ -84,11 +84,11 @@ const ReactionSection = ({ id, screenSize }) => {
   // useEffect
   useEffect(() => {
     getReactions()
-  }, [getReactions])
+  }, [offset])
 
   useEffect(() => {
     getTopReactions()
-  }, [getTopReactions])
+  }, [offset])
 
   useEffect(() => {
     const handleOutsideClose = (e) => {
