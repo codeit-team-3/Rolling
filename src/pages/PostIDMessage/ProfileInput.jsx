@@ -27,19 +27,6 @@ const PROFILE_IMAGES = [
 const ProfileInput = ({ onChange }) => {
   const [imagePreview, setImagePreview] = useState("")
 
-  const handleImageUpload = (e) => {
-    const targetFiles = e.target.files
-    const files = Array.from(targetFiles)
-
-    files.map((file) => {
-      const reader = new FileReader()
-      reader.onload = () => {
-        onChange(reader.result)
-        setImagePreview(reader.result)
-      }
-      reader.readAsDataURL(file)
-    })
-  }
   const handleClickImage = (e) => {
     e.preventDefault()
     onChange(e.target.src)
@@ -54,15 +41,7 @@ const ProfileInput = ({ onChange }) => {
         ) : (
           <i className="ic-person"></i>
         )}
-        <ButtonCircleAdd />
       </label>
-      <input
-        type="file"
-        id="profile"
-        name="profile"
-        accept="image/*"
-        onChange={handleImageUpload}
-      />
       <div className={styles.profileSelectSection}>
         <p>프로필 이미지를 선택해주세요!</p>
         <div>
