@@ -13,7 +13,7 @@ const fontStyles = {
   "나눔손글씨 손편지체": "fontStyle__NanumPen",
 }
 
-const Modal = ({ messageData }) => {
+const Modal = ({ messageData, onClose }) => {
   const [isVisible, setIsVisible] = useState(true)
 
   if (!messageData) {
@@ -29,10 +29,17 @@ const Modal = ({ messageData }) => {
   const formattedcreatedAt = formatDateString(createdAt)
   const plainContent = stripHtml(content)
 
-  const handleClose = () => setIsVisible(false)
+  const handleModalClick = (event) => {
+    event.stopPropagation()
+  }
+
+  const handleClose = () => {
+    setIsVisible(false)
+    onClose()
+  }
 
   return (
-    <div className={styles.modal}>
+    <div className={styles.modal} onClick={handleModalClick}>
       <div className={styles["message-info-container"]}>
         <div className={styles["sender-info-container1"]}>
           <ProfileImage id={sender} src={profileImageURL} />
@@ -53,9 +60,11 @@ const Modal = ({ messageData }) => {
           {plainContent}
         </div>
       </div>
-      <ButtonPrimary onClick={handleClose} type="button" size="40">
-        확인
-      </ButtonPrimary>
+      <div className={styles["button-container"]}>
+        <ButtonPrimary onClick={handleClose} type="button" size="40">
+          확인
+        </ButtonPrimary>
+      </div>
     </div>
   )
 }
