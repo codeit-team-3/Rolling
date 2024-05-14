@@ -27,6 +27,10 @@
   margin-bottom: 16px;
 }
 
+.button {
+  margin-bottom: 24px;
+}
+
 @media screen and (max-width: 1279px) {
   .container {
     margin: 0px auto;

@@ -107,8 +107,7 @@ const List = () => {
           </Swiper>
         </div>
       </section>
-
-      <Link to="/post">
+      <Link to="/post" className={styles.button}>
         <ButtonPrimary>나도 만들어보기</ButtonPrimary>
       </Link>
     </div>
