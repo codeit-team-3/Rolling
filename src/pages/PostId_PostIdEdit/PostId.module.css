@@ -18,9 +18,14 @@
     background-color: var(--green-200);
   }
 }
+
+.servie-header {
+  position: fixed;
+}
+
 .card-list-container {
   max-width: 1200px;
-  margin: 114px auto;
+  margin: 114px auto 0px;
   padding-bottom: 246px;
   position: relative;
 
