@@ -43,5 +43,9 @@
   > span {
     display: inline;
     font-weight: 700;
+
+    @media screen and (max-width: 360px) {
+      font-size: var(--font-size14);
+    }
   }
 }

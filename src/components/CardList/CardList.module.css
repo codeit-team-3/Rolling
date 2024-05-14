@@ -6,7 +6,6 @@
   width: 275px;
   height: 260px;
   padding: 30px 24px 20px 24px;
-  margin: 10px;
   border-radius: 16px;
   border: 1px solid #00000010;
   background-size: cover;
@@ -67,7 +66,12 @@
   border-radius: 16px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 360px) {
+  .cardList {
+    width: 208px;
+    height: 232px;
+  }
+
   .content {
     .name {
       font-size: var(--font-size18);

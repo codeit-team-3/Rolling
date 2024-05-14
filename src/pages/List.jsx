@@ -52,20 +52,10 @@ const List = () => {
         <div className={styles.list}>
           <Swiper
             modules={[Navigation, Pagination, Scrollbar, A11y]}
-            spaceBetween={30}
+            spaceBetween={20}
             navigation={{}}
             grabCursor={true}
-            breakpoints={{
-              0: {
-                slidesPerView: 1.3,
-              },
-              768: {
-                slidesPerView: 2.7,
-              },
-              1279: {
-                slidesPerView: 4,
-              },
-            }}
+            slidesPerView={"auto"}
           >
             {dataPopular.map((item) => {
               return (
@@ -82,20 +72,10 @@ const List = () => {
         <div className={`${styles.list} ${styles.bottom}`}>
           <Swiper
             modules={[Navigation, Pagination, Scrollbar, A11y]}
-            spaceBetween={30}
+            spaceBetween={20}
             navigation={{}}
             grabCursor={true}
-            breakpoints={{
-              0: {
-                slidesPerView: 1.3,
-              },
-              768: {
-                slidesPerView: 2.7,
-              },
-              1279: {
-                slidesPerView: 4,
-              },
-            }}
+            slidesPerView={"auto"}
           >
             {dataRecent.map((item) => {
               return (

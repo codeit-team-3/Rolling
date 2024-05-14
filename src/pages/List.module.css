@@ -1,6 +1,7 @@
 .container {
-  width: 1160px;
+  max-width: 1160px;
   margin: 0px auto;
+  padding: 0px 24px;
 
   > a {
     display: flex;
@@ -34,7 +35,8 @@
 @media screen and (max-width: 1279px) {
   .container {
     margin: 0px auto;
-    width: 768px;
+    width: 100%;
+    padding: 0px 24px;
 
     > a,
     button {
@@ -46,7 +48,8 @@
 @media screen and (max-width: 768px) {
   .container {
     margin: 0px auto;
-    width: 360px;
+    width: 100%;
+    padding: 0px 24px;
 
     > a,
     button {
