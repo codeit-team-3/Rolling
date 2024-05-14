@@ -50,6 +50,9 @@
 
 .option {
   color: var(--gray-900);
+  > button {
+    width: 100%;
+  }
 }
 
 .option:hover {

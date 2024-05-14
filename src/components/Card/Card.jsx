@@ -6,10 +6,10 @@ import { stripHtml } from "../../utils/stripHtml"
 import styles from "./Card.module.css"
 
 const fontStyles = {
-  Pretendard: { fontFamily: "Pretendard" },
-  나눔명조: { fontFamily: "나눔명조" },
-  // "Gaegu": { fontFamily: "Gaegu" },
-  // "신디나루": { fontFamily: "신디나루" }
+  "Noto Sans": "fontStyle__NotoSans",
+  Pretendard: "fontStyle__Pretendard",
+  나눔명조: "fontStyle__NanumMyungjo",
+  "나눔손글씨 손편지체": "fontStyle__NanumPen",
 }
 
 const Card = ({ messageData, isEditable, onDeleteButton, onClickCard }) => {
@@ -68,10 +68,7 @@ const Card = ({ messageData, isEditable, onDeleteButton, onClickCard }) => {
         )}
       </div>
       <div className={styles["message-container"]}>
-        <div
-          className={styles["message-content"]}
-          style={fontStyles[messageData.font]}
-        >
+        <div className={`${styles["message-content"]} ${fontStyles[font]}`}>
           {plainContent}
         </div>
       </div>

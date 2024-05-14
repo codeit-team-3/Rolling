@@ -15,16 +15,21 @@ const MESSAGE_INITIAL_MODEL = {
   profileImageURL: "",
   relationship: "지인",
   content: "",
-  font: "Pretendard",
+  font: "Noto Sans",
 }
 
 const RELATIONSHIP_OPTIONS = ["지인", "동료", "가족", "친구"]
 
-const FONT_OPTIONS = ["Pretendard", "나눔명조", "Gaegu", "신디나루"]
+const FONT_OPTIONS = [
+  "Noto Sans",
+  "Pretendard",
+  "나눔명조",
+  "나눔손글씨 손편지체",
+]
 
 const PostMessage = () => {
   const [messageData, setMessageData] = useState(MESSAGE_INITIAL_MODEL)
-  const [selectedFont, setSelectedFont] = useState("Pretendard")
+  const [selectedFont, setSelectedFont] = useState("Noto Sans")
   const [isFormValid, setIsFormValid] = useState(false)
   const { pathname } = useLocation()
   const navigate = useNavigate()
@@ -39,7 +44,7 @@ const PostMessage = () => {
       data: messageData,
     })
 
-    if (error) console.log("메세지를 생성하는데 실패했습니다", error)
+    if (error) alert("메세지를 생성하는데 실패했습니다", error)
   }
 
   const handleChangeData = useCallback((key, value) => {
