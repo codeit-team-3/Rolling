@@ -25,6 +25,7 @@ const Dropdown = ({ options = [], placeholder = "Placeholder", onSelect }) => {
           name="dropdown"
         >
           {selectedOption || placeholder}
+          <i className="ic-arrow_down"></i>
         </button>
         {isOpen && (
           <ul className={styles.optionList}>
