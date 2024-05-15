@@ -69,7 +69,7 @@ const List = () => {
       </section>
       <section className={styles.wrapper}>
         <div className={styles.header}>최근에 만든 롤링 페이퍼 ⭐️</div>
-        <div className={`${styles.list} ${styles.bottom}`}>
+        <div className={styles.list}>
           <Swiper
             modules={[Navigation, Pagination, Scrollbar, A11y]}
             spaceBetween={20}
