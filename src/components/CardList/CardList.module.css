@@ -7,7 +7,6 @@
   height: 260px;
   padding: 30px 24px 20px 24px;
   border-radius: 16px;
-  border: 1px solid #00000010;
   background-size: cover;
   box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.08);
   overflow: hidden;
@@ -45,6 +44,17 @@
     height: 36px;
     font-size: var(--font-size16);
   }
+}
+
+.backgroundImage {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  object-fit: cover;
+  object-position: center;
 }
 
 .colorImage {
