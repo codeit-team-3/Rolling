@@ -9,18 +9,19 @@
 -
 -
 
-
 <br>
 
 ## 팀원 구성
+
 <br>
 <br>
 <div align="center">
 
 ## Team 3
-|<img src="https://avatars.githubusercontent.com/u/80903685?v=4" width="150" height="150"/>|<img src="https://avatars.githubusercontent.com/u/113002590?v=4" width="150" height="150"/>|<img src="https://avatars.githubusercontent.com/u/154623483?v=4" width="150" height="150"/>|<img src="https://avatars.githubusercontent.com/u/162130792?v=4" width="150" height="150"/>|<img src="https://avatars.githubusercontent.com/u/141720486?v=4" width="150" height="150"/>|
-|:-:|:-:|:-:|:-:|:-:|
-|강은우<br/>[@euoonw](https://github.com/euoonw)|[@MJY1993](https://github.com/MJY1993)|Jeongmin<br/>[@oris8](https://github.com/oris8)|Park-Jingyeong<br/>[@Park-Jingyeong](https://github.com/Park-Jingyeong)|유성진<br/>[@yubugi](https://github.com/yubugi)|
+
+| <img src="https://avatars.githubusercontent.com/u/80903685?v=4" width="150" height="150"/> | <img src="https://avatars.githubusercontent.com/u/113002590?v=4" width="150" height="150"/> | <img src="https://avatars.githubusercontent.com/u/154623483?v=4" width="150" height="150"/> | <img src="https://avatars.githubusercontent.com/u/162130792?v=4" width="150" height="150"/> | <img src="https://avatars.githubusercontent.com/u/141720486?v=4" width="150" height="150"/> |
+| :----------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------: |
+|                      강은우<br/>[@euoonw](https://github.com/euoonw)                       |                           [@MJY1993](https://github.com/MJY1993)                            |                       Jeongmin<br/>[@oris8](https://github.com/oris8)                       |           Park-Jingyeong<br/>[@Park-Jingyeong](https://github.com/Park-Jingyeong)           |                       유성진<br/>[@yubugi](https://github.com/yubugi)                       |
 
 </div>
 
@@ -28,10 +29,7 @@
 
 ## 1. 개발 환경
 
-
-
 ## 2. 채택한 개발 기술과 브랜치 전략
-
 
 <br>
 
@@ -99,10 +97,7 @@
 
 <br>
 
-## 4. 역할 
-
-
-
+## 4. 역할
 
 <br>
 
@@ -122,18 +117,12 @@
 
 ## 6. 신경 쓴 부분
 
-
 <br>
 
 ## 7. 페이지별 기능
 
-
 ## 8. 트러블 슈팅
-
 
 ## 9. 개선 목표
 
-
 ## 10. 프로젝트 후기
-
-
