@@ -1,10 +1,6 @@
 .profileImageGroup {
   display: flex;
   gap: 32px;
-
-  > input {
-    display: none;
-  }
 }
 
 .profileLabel {
