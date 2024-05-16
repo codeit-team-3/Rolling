@@ -16,6 +16,12 @@ const Option = ({ optionType, onSelectOption }) => {
     setSelectedOption(optionType === "color" ? "beige" : "image1")
   }, [optionType])
 
+  useEffect(() => {
+    if (selectedOption === "image1") {
+      onSelectOption(backGroundImageUrls[0])
+    }
+  }, [selectedOption])
+
   const handleOptionClick = (option) => {
     setSelectedOption(option)
     if (optionType === "color") {
