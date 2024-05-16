@@ -52,20 +52,10 @@ const List = () => {
         <div className={styles.list}>
           <Swiper
             modules={[Navigation, Pagination, Scrollbar, A11y]}
-            spaceBetween={30}
+            spaceBetween={20}
             navigation={{}}
             grabCursor={true}
-            breakpoints={{
-              0: {
-                slidesPerView: 1.3,
-              },
-              768: {
-                slidesPerView: 2.7,
-              },
-              1279: {
-                slidesPerView: 4,
-              },
-            }}
+            slidesPerView={"auto"}
           >
             {dataPopular.map((item) => {
               return (
@@ -79,23 +69,13 @@ const List = () => {
       </section>
       <section className={styles.wrapper}>
         <div className={styles.header}>최근에 만든 롤링 페이퍼 ⭐️</div>
-        <div className={`${styles.list} ${styles.bottom}`}>
+        <div className={styles.list}>
           <Swiper
             modules={[Navigation, Pagination, Scrollbar, A11y]}
-            spaceBetween={30}
+            spaceBetween={20}
             navigation={{}}
             grabCursor={true}
-            breakpoints={{
-              0: {
-                slidesPerView: 1.3,
-              },
-              768: {
-                slidesPerView: 2.7,
-              },
-              1279: {
-                slidesPerView: 4,
-              },
-            }}
+            slidesPerView={"auto"}
           >
             {dataRecent.map((item) => {
               return (
@@ -107,8 +87,7 @@ const List = () => {
           </Swiper>
         </div>
       </section>
-
-      <Link to="/post">
+      <Link to="/post" className={styles.button}>
         <ButtonPrimary>나도 만들어보기</ButtonPrimary>
       </Link>
     </div>
