@@ -8,6 +8,7 @@ import "swiper/css/pagination"
 import "swiper/css/scrollbar"
 import styles from "./List.module.css"
 import useRequest from "../hooks/useRequest"
+import useWindowSize from "../hooks/useWindowSize"
 import CardList from "../components/CardList/CardList"
 import ButtonPrimary from "../components/Button/ButtonPrimary"
 
@@ -28,6 +29,9 @@ const List = () => {
     if (data) setDataPopular(data.results)
     else if (error) console.log("오류로 리액션을 불러오는데에 실패하였습니다.")
   }
+  
+  const { width } = useWindowSize()
+  const isMobile = width < 361
 
   const getRecipientsRecent = async () => {
     const { data, error } = await request({
@@ -59,7 +63,9 @@ const List = () => {
           >
             {dataPopular.map((item) => {
               return (
-                <SwiperSlide key={item.id}>
+                <SwiperSlide key={item.id}
+                style={{ width: isMobile ? "208px" : "275px" }}
+                >
                   <CardList {...item} />
                 </SwiperSlide>
               )
@@ -79,7 +85,10 @@ const List = () => {
           >
             {dataRecent.map((item) => {
               return (
-                <SwiperSlide key={item.id}>
+                <SwiperSlide
+                  key={item.id}
+                  style={{ width: isMobile ? "208px" : "275px" }}
+                >
                   <CardList {...item} />
                 </SwiperSlide>
               )
