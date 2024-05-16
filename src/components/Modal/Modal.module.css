@@ -1,0 +1,115 @@
+.modal {
+  text-align: center;
+  width: 600px;
+  height: 476px;
+  top: 3672px;
+  left: 84px;
+  border-radius: 16px;
+  box-shadow: 0px 2px 12px 0px #00000014;
+  background-color: var(--white);
+}
+.modal.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: var(--font-size20);
+  font-family: var(--font-family-Regular);
+  color: var(--gray-400);
+}
+.message-info-container {
+  width: 100%;
+  height: 116px;
+
+  display: flex;
+  justify-content: space-between;
+}
+.sender-info-container1 {
+  width: 450px;
+  height: 56px;
+  text-align: left;
+  display: flex;
+  margin-left: 39px;
+  margin-top: 40px;
+}
+.sender-info-container2 {
+  margin-left: 16px;
+  width: 350px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.sender {
+  font-size: var(--font-size20);
+  font-family: var(--font-family-Regular);
+  line-height: 24px;
+  margin-bottom: 6px;
+}
+.sender span {
+  font-family: var(--font-family-Bold);
+}
+
+.created-at {
+  margin-top: 56px;
+  margin-right: 45px;
+  line-height: 20px;
+  letter-spacing: -0.005em;
+  color: var(--gray-400);
+  font-size: var(--font-size14);
+  font-family: var(--font-family-Regular);
+}
+
+.message-container {
+  width: 520px;
+  height: 256px;
+  margin: 0 auto 24px;
+  border-top: 1px solid var(--gray-200);
+}
+
+.message-content {
+  width: 500px;
+  height: 240px;
+  margin: 16px auto;
+  padding-right: 10px;
+  text-align: left;
+  overflow-y: auto;
+  scrollbar-width: thin;
+
+  font-size: var(--font-size18);
+  font-family: var(--font-family-Regular);
+  line-height: 28px;
+  letter-spacing: -0.01em;
+  color: var(--gray-500);
+
+  white-space: pre-wrap;
+}
+
+.button-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 767px) {
+  .modal {
+    max-width: 320px;
+    height: 320px;
+  }
+  .sender-info-container1 {
+    margin-left: 25px;
+  }
+  .sender-info-container2 {
+    margin-left: 5px;
+  }
+  .message-container {
+    max-width: 280px;
+    height: 120px;
+  }
+
+  .message-content {
+    max-width: 280px;
+    height: 120px;
+    padding-left: 20px;
+  }
+}

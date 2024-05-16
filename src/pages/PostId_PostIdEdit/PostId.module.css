@@ -1,0 +1,143 @@
+.post-id-page {
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center center;
+  min-height: 100vh;
+  position: relative;
+
+  &.beige {
+    background-color: var(--orange-200);
+  }
+  &.purple {
+    background-color: var(--purple-200);
+  }
+  &.blue {
+    background-color: var(--blue-200);
+  }
+  &.green {
+    background-color: var(--green-200);
+  }
+}
+
+.servie-header {
+  position: fixed;
+}
+
+.card-list-container {
+  max-width: 1200px;
+  margin: 114px auto 0px;
+  padding-bottom: 246px;
+  position: relative;
+
+  padding-left: 24px;
+  padding-right: 24px;
+  box-sizing: border-box;
+}
+
+.card-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px 24px;
+  max-width: 1200px;
+}
+
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.modal-content {
+  position: relative;
+}
+
+.button-container {
+  position: absolute;
+  top: -58px;
+  right: 24px;
+}
+
+.back-button-container {
+  position: absolute;
+  top: -58px;
+  left: 24px;
+}
+
+.delete-page-button {
+  width: 120px;
+  height: 39px;
+  border-radius: 6px;
+  background-color: var(--purple-600);
+  color: var(--white);
+  font-size: var(--font-size16);
+  position: absolute;
+  top: -58px;
+  right: 24px;
+
+  &:active:not(:disabled) {
+    background-color: #9747ff;
+  }
+
+  &:disabled {
+    background-color: var(--gray-300);
+  }
+
+  &:hover:not(:disabled) {
+    background-color: var(--purple-700);
+  }
+
+  &:active:not(:disabled),
+  &:focus:not(:disabled) {
+    background-color: var(--purple-800);
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1248px) {
+  .card-list-container {
+    max-width: calc(100% - 48px);
+  }
+}
+
+@media (max-width: 1199px) {
+  .delete-page-button {
+    height: 55px;
+    border-radius: 12px;
+    font-size: var(--font-size18);
+    font-family: var(--font-family-Bold);
+    position: fixed;
+    bottom: 24px;
+    top: auto;
+    right: auto;
+    left: auto;
+    z-index: 1;
+  }
+  .card-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .card-list-container {
+    max-width: 768px;
+  }
+  .delete-page-button {
+    width: 720px;
+  }
+}
+
+@media (max-width: 767px) {
+  .card-list {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .card-list-container {
+    max-width: 352px;
+  }
+  .delete-page-button {
+    width: 320px;
+  }
+}

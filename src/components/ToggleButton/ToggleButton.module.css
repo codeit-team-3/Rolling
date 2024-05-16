@@ -1,0 +1,16 @@
+.toggleButton {
+  width: 122px;
+  font-size: var(--font-size16);
+  font-family: var(--font-family-Regular);
+  border: none;
+  border-radius: 6px;
+  color: var(--gray-900);
+  padding: 7px 16px;
+}
+
+.selected-button {
+  font-family: var(--font-family-Bold);
+  background-color: var(--white);
+  border: 2px solid var(--purple-600);
+  color: var(--purple-700);
+}

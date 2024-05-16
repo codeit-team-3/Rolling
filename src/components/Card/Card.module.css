@@ -1,0 +1,130 @@
+.card {
+  max-width: 384px;
+  height: 280px;
+  top: 3672px;
+  left: 84px;
+  border-radius: 16px;
+  box-shadow: 0px 2px 12px 0px #00000014;
+  background-color: var(--white);
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.card.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: var(--font-size20);
+  font-family: var(--font-family-Regular);
+  color: var(--gray-400);
+}
+.message-info-container {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 24px;
+}
+.sender-info-container1 {
+  width: 250px;
+  height: 56px;
+  text-align: left;
+  display: flex;
+  margin: 28px auto 16px 24px;
+}
+.sender-info-container2 {
+  margin-left: 14px;
+  width: 150px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.sender {
+  font-size: var(--font-size20);
+  font-family: var(--font-family-Regular);
+  line-height: 24px;
+  margin-bottom: 6px;
+}
+.sender span {
+  font-family: var(--font-family-Bold);
+}
+
+.created-at {
+  margin-top: 16px;
+  margin-left: 25px;
+  line-height: 20px;
+  letter-spacing: -0.005em;
+  color: var(--gray-400);
+  font-size: var(--font-size14);
+  font-family: var(--font-family-Regular);
+}
+
+.message-container {
+  max-width: 336px;
+  height: 106px;
+  margin: 0 auto 24px;
+  border-top: 1px solid var(--gray-200);
+}
+
+.message-content {
+  width: 100%;
+  height: 87px;
+  margin: 16px auto;
+  padding-right: 20px;
+  padding-left: 20px;
+  text-align: left;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+
+  font-size: var(--font-size18);
+  font-family: var(--font-family-Regular);
+  line-height: 28px;
+  letter-spacing: -0.01em;
+  color: var(--gray-500);
+
+  white-space: pre-wrap;
+}
+
+.button-container {
+  width: 100%;
+}
+
+.delete-button {
+  margin-right: 24px;
+  margin-left: 10px;
+}
+
+@media (max-width: 1199px) {
+  .card {
+    width: 352px;
+    height: 284px;
+  }
+}
+
+@media (max-width: 767px) {
+  .card {
+    max-width: 320px;
+    height: 230px;
+  }
+  .message-container {
+    height: 60px;
+  }
+  .message-content {
+    height: 50px;
+    font-size: var(--font-size15);
+  }
+  .sender {
+    font-size: var(--font-size16);
+    font-family: var(--font-family-Regular);
+  }
+  .sender span {
+    font-family: var(--font-family-Regular);
+  }
+  .sender-info-container2 {
+    width: 130px;
+  }
+}
